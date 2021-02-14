@@ -1,0 +1,20 @@
+{
+    "globals": {
+        "ts-jest": {
+            "tsConfigFile": "./tsconfig.json",
+            "enableTsDiagnostics": false
+        }
+    },
+    "transform": {
+        "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testRegex": "./tests/.*\\.test.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js"
+    ],
+    "collectCoverageFrom": [
+        "src/*.ts"
+    ]
+}
