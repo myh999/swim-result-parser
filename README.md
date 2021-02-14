@@ -1,7 +1,7 @@
 # Swim Result Parser
 
-[![travis](https://travis-ci.org/myh999/swim-result-parser?branch=master)](https://travis-ci.org/myh999/swim-result-parser?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/myh999/swim-result-parser/badge.svg?branch=master)](https://coveralls.io/github/myh999/swim-result-parser?branch=master)
+[![travis](https://travis-ci.org/myh999/swim-result-parser.svg?branch=main)](https://travis-ci.org/myh999/swim-result-parser?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/myh999/swim-result-parser/badge.svg?branch=main)](https://coveralls.io/github/myh999/swim-result-parser?branch=main)
 
 To install
 ```bash
