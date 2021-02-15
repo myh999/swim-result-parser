@@ -130,12 +130,22 @@ describe("string-matcher", () => {
       isRelay: false
     };
 
-    const input4 = "McCuaig S9sb9sm9, Cameron";
-    const output4 = undefined;
+    const input4 = "Event  17 ...(Women 800 SC Meter Freestyle)";
+    const output4: Event = {
+      eventNum: 17,
+      gender: Gender.FEMALE,
+      distance: 800,
+      stroke: Stroke.FREESTYLE,
+      isRelay: false
+    };
+
+    const input5 = "McCuaig S9sb9sm9, Cameron";
+    const output5 = undefined;
 
     expect(matcher.getEvent(input1)).toEqual(output1);
     expect(matcher.getEvent(input2)).toEqual(output2);
     expect(matcher.getEvent(input3)).toEqual(output3);
     expect(matcher.getEvent(input4)).toEqual(output4);
+    expect(matcher.getEvent(input5)).toEqual(output5);
   });
 });

@@ -1,4 +1,3 @@
-import { resolve } from "path";
 import { getDocument } from "pdfjs-dist/es5/build/pdf.js";
 import {
   PDFDocumentProxy,

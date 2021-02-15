@@ -49,3 +49,12 @@ export interface Entry {
   team: string;
   [other: string]: any;
 }
+
+export interface EventEntry {
+  event: Event;
+  entries: Entry[];
+}
+
+export interface Meet {
+  eventEntries: EventEntry[];
+}
