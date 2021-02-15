@@ -1,13 +1,19 @@
+import { readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import PDFParser from "../../src/util/pdf-parser";
 
-describe("image-converter", () => {
-  test("successfully converts pdf to png", async () => {
+describe("pdf-converter", () => {
+  const LOG_PATH = "log/pdf-parser-test.json"
+  test("successfully converts pdf to meet data", async () => {
     const inputPdf = "../../data/example0.pdf";
     const fullPath = resolve(__dirname, inputPdf);
 
-    const parser = new PDFParser(fullPath);
+    const rawConfig = readFileSync(resolve(__dirname, "../../data/config0.json"));
+    const config = JSON.parse(rawConfig.toString());
+
+    const parser = new PDFParser(config, fullPath);
     const output = await parser.getText();
-    expect(output.length).not.toBe(0);
+    writeFileSync(LOG_PATH, JSON.stringify(output));
+    expect(output.eventEntries.length).not.toBe(0);
   });
 });

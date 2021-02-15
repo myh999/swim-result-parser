@@ -45,7 +45,6 @@ export interface Time {
 // This includes entries + results
 export interface Entry {
   rank: number;
-  name: Name;
   team: string;
   [other: string]: any;
 }

@@ -9,3 +9,4 @@ codegen
 node_modules
 dist
 coverage
+log
