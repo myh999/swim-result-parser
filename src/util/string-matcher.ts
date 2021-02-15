@@ -1,13 +1,20 @@
-import { Team, Name, Time } from "../types/common";
+import { Team, Name, Time, Event, Gender, Stroke } from "../types/common";
 import { Config } from "../types/config";
 
+const NAME_DECORATORS = "\\*";
 const TIME_PATTERN = "([0-5][0-9]:)?[0-5][0-9]\\.[0-9][0-9]";
+const TIME_DECORATORS = "X";
 
 class StringMatcher {
-    static getLastFirstName(input: string): Name {
-        const nameString = input.trim();
-        const splitNames = nameString.split(",");
-        if (splitNames.length !== 2) return undefined;
+    private config: Config;
+
+    constructor(config: Config) {
+        this.config = config;
+    }
+
+    public getLastFirstName(input: string): Name {
+        const splitNames = input.replace(new RegExp(NAME_DECORATORS), "").split(",");
+        if (!splitNames || splitNames.length !== 2) return undefined;
 
         const lastName = splitNames[0].trim();
         const firstName = splitNames[1].trim();
@@ -17,21 +24,23 @@ class StringMatcher {
         };
     }
 
-    static getTeam(input: string, config: Config): Team {
+    public getTeam(input: string, isRelay: boolean): Team {
         const trimmed = input.trim();
-        config.teams.forEach((team: Team) => {
-            if (trimmed === team.individualName || trimmed === team.relayName) {
+        for (const team of this.config.teams) {
+            if ((isRelay === false && trimmed === team.individualName) || (isRelay === true && trimmed === team.relayName)) {
                 return team;
             }
-        });
+        }
 
         return undefined;
     }
 
-    static getTime(input: string): Time {
-        const trimmed = input.trim();
+    public getTime(input: string): Time {
+        // remove decorators (ex. X for Exhibition)
+        const trimmed = input.replace(new RegExp(TIME_DECORATORS), "");
+
         const matched = trimmed.match(new RegExp(TIME_PATTERN));
-        if (matched.length === 0) return undefined;
+        if (!matched || matched.length === 0) return undefined;
         let min: number;
         let sec: number;
         let frac: number;
@@ -41,7 +50,6 @@ class StringMatcher {
             min = 0;
             currentString = currentSplit[0];
         } else {
-            console.log(currentSplit);
             min = parseInt(currentSplit[0]);
             currentString = currentSplit[1];
         }
@@ -56,6 +64,71 @@ class StringMatcher {
             min,
             sec,
             frac
+        };
+    }
+
+    // NOTE: This will not work with age group formats
+    public getEvent(input: string): Event {
+        const eventString = "Event";
+        const relayString = "Relay";
+
+        let eventNum: number;
+        let gender: Gender;
+        let distance: number;
+        let stroke: Stroke;
+        let isRelay: boolean;
+
+        let index = 0;
+        let currentString = input;
+        index = currentString.search(eventString);
+        if (index === -1) return undefined;
+
+        currentString = currentString.slice(index + eventString.length, currentString.length);
+        eventNum = parseInt(currentString);
+        if (isNaN(eventNum)) return undefined;
+
+        Object.values(Gender).forEach((compare: Gender) => {
+            const tmpIndex = currentString.search(compare);
+            if (tmpIndex !== -1) {
+                gender = compare;
+                index = tmpIndex;
+            }
+        });
+
+        if (!gender) return undefined;
+        currentString = currentString.slice(index + gender.length, currentString.length);
+
+        distance = parseInt(currentString);
+        if (isNaN(distance)) return undefined;
+
+        Object.values(Stroke).forEach((compare: Stroke) => {
+            let tmpIndex = currentString.search(compare);
+            if (tmpIndex !== -1) {
+                stroke = compare;
+            }
+            if (compare === Stroke.MEDLEY) {
+                tmpIndex = currentString.search("IM");
+                if (tmpIndex !== -1) {
+                    stroke = compare;
+                }
+            }
+        });
+
+        if (!stroke) return undefined;
+
+        index = currentString.search(relayString);
+        if (index !== -1) {
+            isRelay = true;
+        } else {
+            isRelay = false;
+        }
+
+        return {
+            eventNum,
+            gender,
+            distance,
+            stroke,
+            isRelay
         };
     }
 }
