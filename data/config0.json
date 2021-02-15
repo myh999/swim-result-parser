@@ -1,0 +1,24 @@
+{
+    "teams": [
+        {
+            "name": "Waterloo Warriors",
+            "individualName": "WAT",
+            "relayName": "Warriors"
+        },
+        {
+            "name": "Western Mustangs",
+            "individualName": "WES",
+            "relayName": "Mustangs"
+        },
+        {
+            "name": "McMaster Mauraders",
+            "individualName": "MACU",
+            "relayName": "MACU"
+        },
+        {
+            "name": "Toronto Varsity Blues",
+            "individualName": "UT",
+            "relayName": "UT"
+        }
+    ]
+}

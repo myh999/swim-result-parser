@@ -2,7 +2,8 @@
     "compilerOptions": {
         "target": "es6",
         "module": "commonjs",
-        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "noImplicitAny": false,
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,

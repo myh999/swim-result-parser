@@ -1,8 +1,8 @@
 {
     "globals": {
         "ts-jest": {
-            "tsConfigFile": "./tsconfig.json",
-            "enableTsDiagnostics": false
+            "tsconfig": "./tsconfig.json",
+            "diagnostics": false
         }
     },
     "transform": {
@@ -16,5 +16,6 @@
     ],
     "collectCoverageFrom": [
         "src/*.ts"
-    ]
+    ],
+    "testEnvironment": "node"
 }
