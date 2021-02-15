@@ -240,8 +240,22 @@ class PDFParser {
       eventEntries.push(...this.parsePage(page));
     }
 
+    // Merge duplicate entries across pages
+    // TODO: We can optimize this
+    const mergedEntries: EventEntry[] = [];
+    for (const entry of eventEntries) {
+      const duplicateEntry = mergedEntries.find((compare: EventEntry): boolean => {
+        return compare.event.eventNum === entry.event.eventNum;
+      });
+      if (duplicateEntry) {
+        duplicateEntry.entries.push(...entry.entries);
+      } else {
+        mergedEntries.push(entry);
+      }
+    }
+
     return {
-      eventEntries
+      eventEntries: mergedEntries
     };
   }
 }

@@ -3,7 +3,7 @@ import { resolve } from "path";
 import PDFParser from "../../src/util/pdf-parser";
 
 describe("pdf-converter", () => {
-  const LOG_PATH = "log/pdf-parser-test.json"
+  const LOG_PATH = "log/pdf-parser-test.json";
   test("successfully converts pdf to meet data", async () => {
     const inputPdf = "../../data/example0.pdf";
     const fullPath = resolve(__dirname, inputPdf);
