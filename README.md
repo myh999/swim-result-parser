@@ -27,3 +27,10 @@ To lint
 ```bash
 $ npm run tslint
 ```
+
+TODO
+* Add the points predictor
+* Make it into an API endpoint
+* Add a frontend, or at least a demo page
+* Improve validation for PDF parser test (ex. compare against known # of teams)
+* Optimize some inefficient algos
