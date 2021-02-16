@@ -1,13 +1,18 @@
-import { appendFileSync, writeFileSync } from "fs";
+import { appendFileSync, existsSync, mkdirSync, writeFileSync } from "fs";
 import { resolve } from "path";
 
 const LOG_BASE = "log/";
 
 class Logger {
     path: string;
+    enabled: string;
 
     constructor(path: string) {
         this.path = resolve(LOG_BASE, path);
+        const basePath = resolve(LOG_BASE, path);
+        if (!existsSync(basePath)) {
+            mkdirSync(basePath);
+        }
         writeFileSync(this.path, "");
     }
 
