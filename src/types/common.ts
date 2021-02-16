@@ -57,3 +57,8 @@ export interface EventEntry {
 export interface Meet {
     eventEntries: EventEntry[];
 }
+
+export interface TeamPoints {
+    teamName: string;
+    points: number;
+}

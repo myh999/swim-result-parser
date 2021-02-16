@@ -9,8 +9,7 @@ describe("string-matcher", () => {
 
     beforeAll(() => {
         const rawConfig = readFileSync(resolve(__dirname, "../../data/config0.json"));
-        const config = JSON.parse(rawConfig.toString());
-        matcher = new StringMatcher(config);
+        matcher = new StringMatcher();
     });
 
     test("parses a valid time", () => {
@@ -35,13 +34,17 @@ describe("string-matcher", () => {
             frac: 45,
         };
 
-        const input4 = "Papadedes, Dimitri W";
-        const output4 = undefined;
+        const input4 = "XNT";
+        const output4 = "NT";
+
+        const input5 = "Papadedes, Dimitri W";
+        const output5 = undefined;
 
         expect(matcher.getTime(input1)).toEqual(output1);
         expect(matcher.getTime(input2)).toEqual(output2);
         expect(matcher.getTime(input3)).toEqual(output3);
-        expect(matcher.getTime(input4)).toEqual(output4);
+        expect(matcher.getAlternateTime(input4)).toEqual(output4);
+        expect(matcher.getTime(input5)).toEqual(output5);
     });
 
     test("parses a valid name", () => {
@@ -81,25 +84,12 @@ describe("string-matcher", () => {
 
     test("parses a valid team", () => {
         const input1 = "WAT";
-        const output1: Team = {
-            name: "Waterloo Warriors",
-            individualName: "WAT",
-            relayName: "Warriors"
-        };
-
         const input2 = "Mustangs";
-        const output2: Team = {
-            name: "Western Mustangs",
-            individualName: "WES",
-            relayName: "Mustangs"
-        };
-
         const input3 = "McCuaig S9sb9sm9, Cameron";
-        const output3 = undefined;
 
-        expect(matcher.getTeam(input1, false)).toEqual(output1);
-        expect(matcher.getTeam(input2, true)).toEqual(output2);
-        expect(matcher.getTeam(input3, true)).toEqual(output3);
+        expect(matcher.getTeam(input1)).toBeTruthy();
+        expect(matcher.getTeam(input2)).toBeTruthy();
+        expect(matcher.getTeam(input3)).toBeFalsy();
     });
 
     test("parses a valid event", () => {

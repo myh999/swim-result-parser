@@ -1,19 +1,14 @@
-import { Team, Name, Time, Event, Gender, Stroke, AlternateTime } from "../types/common";
-import { Config } from "../types/config";
+import { Name, Time, Event, Gender, Stroke, AlternateTime } from "../types/common";
 
-const NAME_DECORATORS = "\\*";
-const TIME_PATTERN = "([0-5][0-9]:)?[0-5][0-9]\\.[0-9][0-9]";
-const TIME_DECORATORS = "X";
+const NAME_DECORATORS = /^\*/;
+const TIME_PATTERN = /^([0-5]?[0-9]:)?[0-5][0-9]\.[0-9][0-9]$/;
+const TIME_DECORATORS = /^X/;
+const TEAM_PATTERN = /^[A-Za-z]{2,}([A-Za-z]|\s)*$/; // Team has to start with 2 characters
 
 class StringMatcher {
-    private config: Config;
-
-    constructor(config: Config) {
-        this.config = config;
-    }
 
     public getLastFirstName(input: string): Name {
-        const splitNames = input.replace(new RegExp(NAME_DECORATORS), "").split(",");
+        const splitNames = input.trim().replace(new RegExp(NAME_DECORATORS), "").split(",");
         if (!splitNames || splitNames.length !== 2) return undefined;
 
         const lastName = splitNames[0].trim();
@@ -24,23 +19,19 @@ class StringMatcher {
         };
     }
 
-    public getTeam(input: string, isRelay: boolean): Team {
+    public getTeam(input: string): string {
         const trimmed = input.trim();
-        for (const team of this.config.teams) {
-            if ((isRelay === false && trimmed === team.individualName) || (isRelay === true && trimmed === team.relayName)) {
-                return team;
-            }
-        }
+        if (trimmed.search(new RegExp(TEAM_PATTERN)) === -1) return undefined;
 
-        return undefined;
+        return trimmed;
     }
 
     public getTime(input: string): Time {
         // remove decorators (ex. X for Exhibition)
-        const trimmed = input.replace(new RegExp(TIME_DECORATORS), "");
+        const trimmed = input.trim().replace(new RegExp(TIME_DECORATORS), "");
 
-        const matched = trimmed.match(new RegExp(TIME_PATTERN));
-        if (!matched || matched.length === 0) return undefined;
+        const matched = trimmed.search(new RegExp(TIME_PATTERN));
+        if (matched === -1) return undefined;
         let min: number;
         let sec: number;
         let frac: number;

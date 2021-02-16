@@ -5,8 +5,7 @@ import {
     TextContent,
     TextItem,
 } from "pdfjs-dist/types/display/api";
-import { Entry, EventEntry, Meet, Event, Time, Name, Team, AlternateTime } from "../types/common";
-import { Config } from "../types/config";
+import { Entry, EventEntry, Meet, Event, Time, Name, AlternateTime } from "../types/common";
 import Logger from "./logger";
 import StringMatcher from "./string-matcher";
 
@@ -34,9 +33,9 @@ class PDFParser {
     columns: number[];
     logger: Logger;
 
-    constructor(config: Config, path: string) {
+    constructor(path: string) {
         this.path = path;
-        this.matcher = new StringMatcher(config);
+        this.matcher = new StringMatcher();
         this.columns = [];
         this.logger = new Logger(LOG_PATH);
     }
@@ -73,7 +72,7 @@ class PDFParser {
             let index = 0;
             let rank: number;
             let name: Name;
-            let school: Team;
+            let team: string;
             let seedTime: Time | AlternateTime;
             while (index < row.length && !rank) {
                 rank = parseInt(row[index].text);
@@ -87,11 +86,11 @@ class PDFParser {
             }
             if (!name) return undefined;
 
-            while (index < row.length && !school) {
-                school = this.matcher.getTeam(row[index].text, currentEvent.isRelay);
+            while (index < row.length && !team) {
+                team = this.matcher.getTeam(row[index].text);
                 index++;
             }
-            if (!school) return undefined;
+            if (!team) return undefined;
 
             while (index < row.length && !seedTime) {
                 seedTime = this.matcher.getTime(row[index].text) || this.matcher.getAlternateTime(row[index].text);
@@ -102,14 +101,14 @@ class PDFParser {
             return {
                 rank,
                 name,
-                team: school.name,
+                team,
                 seedTime
             };
         } else {
             // Relay: Rank, Team, Relay, Seed Time
             let index = 0;
             let rank: number;
-            let team: Team;
+            let team: string;
             let relay: string;
             let seedTime: Time | AlternateTime;
 
@@ -120,7 +119,7 @@ class PDFParser {
             if (!rank) return undefined;
 
             while (index < row.length && !team) {
-                team = this.matcher.getTeam(row[index].text, currentEvent.isRelay);
+                team = this.matcher.getTeam(row[index].text);
                 index++;
             }
             if (!team) return undefined;
@@ -140,7 +139,7 @@ class PDFParser {
 
             return {
                 rank,
-                team: team.name,
+                team,
                 relay,
                 seedTime
             };

@@ -16,7 +16,7 @@ export interface MissingInfo {
 // TODO: This entire thing can probably be optimized
 class MeetValidator {
 
-    private static GetMissingEntries(eventEntry: EventEntry): MissingEntry[] {
+    private getMissingEntries(eventEntry: EventEntry): MissingEntry[] {
         let expectedRank = 1;
         const missingEntries: MissingEntry[] = [];
         const sortedEntries: Entry[] = eventEntry.entries.sort((entry1: Entry, entry2: Entry): number => {
@@ -40,7 +40,7 @@ class MeetValidator {
         return missingEntries;
     }
 
-    public static GetMissingInfo(meet: Meet): MissingInfo {
+    public getMissingInfo(meet: Meet): MissingInfo {
         const sortedEventEntries: EventEntry[] = meet.eventEntries.sort((eventEntry1: EventEntry, eventEntry2: EventEntry): number => {
             return eventEntry1.event.eventNum - eventEntry2.event.eventNum;
         });
@@ -59,7 +59,7 @@ class MeetValidator {
             }
             expectedEventNum++;
             Logger.log(JSON.stringify(eventEntry.event), LOG_PATH);
-            missingEntries.push(...this.GetMissingEntries(eventEntry));
+            missingEntries.push(...this.getMissingEntries(eventEntry));
         }
 
         const result: MissingInfo = {
