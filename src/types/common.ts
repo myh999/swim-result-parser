@@ -12,7 +12,7 @@ export enum Stroke {
   MEDLEY = "Medley",
 }
 
-export enum AlternateTimes {
+export enum AlternateTime {
   NO_TIME = "NT",
   DISQUALIFIED = "DQ"
 }

@@ -1,4 +1,3 @@
-import { appendFileSync, writeFileSync } from "fs";
 import { getDocument } from "pdfjs-dist/es5/build/pdf.js";
 import {
   PDFDocumentProxy,
@@ -6,13 +5,14 @@ import {
   TextContent,
   TextItem,
 } from "pdfjs-dist/types/display/api";
-import { Entry, EventEntry, Meet, Event, Time, Name, Team } from "../types/common";
+import { Entry, EventEntry, Meet, Event, Time, Name, Team, AlternateTime } from "../types/common";
 import { Config } from "../types/config";
+import Logger from "./logger";
 import StringMatcher from "./string-matcher";
 
 const COL_ERR = 10;
 const ROW_ERR = 5;
-const LOG_PATH = "log/pdf-parser.log";
+const LOG_PATH = "pdf-parser.log";
 
 interface TextInfo {
   text: string;
@@ -32,11 +32,13 @@ class PDFParser {
   path: string;
   matcher: StringMatcher;
   columns: number[];
+  logger: Logger;
 
   constructor(config: Config, path: string) {
     this.path = path;
     this.matcher = new StringMatcher(config);
     this.columns = [];
+    this.logger = new Logger(LOG_PATH);
   }
 
   private async getTextFromPage(doc: PDFDocumentProxy, pageNum: number): Promise<PageInfo> {
@@ -64,7 +66,7 @@ class PDFParser {
     });
 
     const log = row.map((info) => ({ text: info.text, xPos: info.xPos }));
-    appendFileSync(LOG_PATH, JSON.stringify(log) + "\n");
+    this.logger.log(JSON.stringify(log));
 
     if (currentEvent.isRelay === false) {
       // Individual: Rank, Name, Year, School, Seed Time
@@ -72,7 +74,7 @@ class PDFParser {
       let rank: number;
       let name: Name;
       let school: Team;
-      let seedTime: Time;
+      let seedTime: Time | AlternateTime;
       while (index < row.length && !rank) {
         rank = parseInt(row[index].text);
         index++;
@@ -92,7 +94,7 @@ class PDFParser {
       if (!school) return undefined;
 
       while (index < row.length && !seedTime) {
-        seedTime = this.matcher.getTime(row[index].text);
+        seedTime = this.matcher.getTime(row[index].text) || this.matcher.getAlternateTime(row[index].text);
         index++;
       }
       if (!seedTime) return undefined;
@@ -109,7 +111,7 @@ class PDFParser {
       let rank: number;
       let team: Team;
       let relay: string;
-      let seedTime: Time;
+      let seedTime: Time | AlternateTime;
 
       while (index < row.length && !rank) {
         rank = parseInt(row[index].text);
@@ -131,7 +133,7 @@ class PDFParser {
       if (!relay) return undefined;
 
       while (index < row.length && !seedTime) {
-        seedTime = this.matcher.getTime(row[index].text);
+        seedTime = this.matcher.getTime(row[index].text) || this.matcher.getAlternateTime(row[index].text);
         index++;
       }
       if (!seedTime) return undefined;
@@ -179,7 +181,7 @@ class PDFParser {
         const event: Event = this.matcher.getEvent(currentRow[0].text);
         if (event) {
           // We have a new event
-          appendFileSync(LOG_PATH, JSON.stringify(event) + "\n");
+          this.logger.log(JSON.stringify(event));
           if (currentEvent && currentEntries.length !== 0) {
             eventEntries.push({
               event: currentEvent,
@@ -210,7 +212,6 @@ class PDFParser {
   }
 
   public async getText(): Promise<Meet> {
-    writeFileSync(LOG_PATH, "");
     const doc: PDFDocumentProxy = await getDocument(this.path).promise;
     const pagePromises: Promise<PageInfo>[] = [];
     for (let i = 0; i < doc.numPages; i++) {

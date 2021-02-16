@@ -1,4 +1,4 @@
-import { Team, Name, Time, Event, Gender, Stroke } from "../types/common";
+import { Team, Name, Time, Event, Gender, Stroke, AlternateTime } from "../types/common";
 import { Config } from "../types/config";
 
 const NAME_DECORATORS = "\\*";
@@ -65,6 +65,15 @@ class StringMatcher {
             sec,
             frac
         };
+    }
+
+    public getAlternateTime(input: string): AlternateTime {
+        const trimmed = input.trim().replace(TIME_DECORATORS, "");
+        const alternateTimes: AlternateTime[] = Object.values(AlternateTime);
+        for (const compare of alternateTimes) {
+            if (compare === trimmed) return compare;
+        }
+        return undefined;
     }
 
     // NOTE: This will not work with age group formats
