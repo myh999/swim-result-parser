@@ -34,3 +34,4 @@ TODO
 * Add a frontend, or at least a demo page
 * Improve validation for PDF parser test (ex. compare against known # of teams)
 * Optimize some inefficient algos
+* Expand this into other formats (meet results, live results)
