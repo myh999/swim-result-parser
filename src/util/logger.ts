@@ -9,7 +9,7 @@ class Logger {
 
     constructor(path: string) {
         this.path = resolve(LOG_BASE, path);
-        const basePath = resolve(LOG_BASE, path);
+        const basePath = resolve(LOG_BASE);
         if (!existsSync(basePath)) {
             mkdirSync(basePath);
         }
