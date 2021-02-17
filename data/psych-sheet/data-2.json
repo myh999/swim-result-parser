@@ -1,0 +1,2667 @@
+{
+    "eventEntries": [
+        {
+            "event": {
+                "eventNum": 1,
+                "gender": "Women",
+                "distance": 100,
+                "stroke": "Butterfly",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Ji",
+                        "firstName": "Christina"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 5,
+                        "frac": 0
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Zhang",
+                        "firstName": "Stephanie"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 6,
+                        "frac": 26
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "vanLeeuwen",
+                        "firstName": "Jocelyn"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 6,
+                        "frac": 32
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Kucheran",
+                        "firstName": "Emmy"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 7,
+                        "frac": 49
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Lavergne",
+                        "firstName": "Paige"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 9,
+                        "frac": 59
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Sherwin S8sb8sm8",
+                        "firstName": "Megan"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 34,
+                        "frac": 11
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Bumbulis",
+                        "firstName": "Laura"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 2,
+                "gender": "Men",
+                "distance": 100,
+                "stroke": "Butterfly",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Ryu",
+                        "firstName": "Hohyun"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 56,
+                        "frac": 84
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Bozyigit",
+                        "firstName": "Gokhan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 56,
+                        "frac": 88
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Wormald",
+                        "firstName": "Lukas"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 58,
+                        "frac": 0
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Alsan",
+                        "firstName": "Kaan"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 58,
+                        "frac": 2
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Daniel",
+                        "firstName": "Jyasi"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 0,
+                        "frac": 4
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Bird",
+                        "firstName": "Josh"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 1,
+                        "frac": 33
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Chambers",
+                        "firstName": "Ian"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 1,
+                        "frac": 35
+                    }
+                },
+                {
+                    "rank": 8,
+                    "name": {
+                        "lastName": "Lojko",
+                        "firstName": "Alex"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 2,
+                        "frac": 3
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 3,
+                "gender": "Women",
+                "distance": 100,
+                "stroke": "Backstroke",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Chou",
+                        "firstName": "Lou Salome"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 59,
+                        "frac": 74
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Ladyman",
+                        "firstName": "Eloise"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 1,
+                        "frac": 82
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "MacKinnon",
+                        "firstName": "Morley"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 7,
+                        "frac": 19
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Du Toit",
+                        "firstName": "Amileigh"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 8,
+                        "frac": 0
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Chong",
+                        "firstName": "Cassandra"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 8,
+                        "frac": 65
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Funk",
+                        "firstName": "Celine"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 13,
+                        "frac": 35
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 4,
+                "gender": "Men",
+                "distance": 100,
+                "stroke": "Backstroke",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Li",
+                        "firstName": "Michael"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 59,
+                        "frac": 16
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Kalra",
+                        "firstName": "Navraj"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 0,
+                        "frac": 42
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Van Wyk",
+                        "firstName": "Brandon"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 1,
+                        "frac": 32
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Ryu",
+                        "firstName": "Hohyun"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 2,
+                        "frac": 45
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Li",
+                        "firstName": "Peter"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 4,
+                        "frac": 55
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "McCuaig S9sb9sm9",
+                        "firstName": "Cameron"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 8,
+                        "frac": 23
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Curry",
+                        "firstName": "Tristan"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 5,
+                "gender": "Women",
+                "distance": 100,
+                "stroke": "Breaststroke",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Bandstra",
+                        "firstName": "Jordyn"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 20,
+                        "frac": 1
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Rudolph",
+                        "firstName": "Georgia"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 25,
+                        "frac": 93
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Romano",
+                        "firstName": "Sonia"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 25,
+                        "frac": 94
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 6,
+                "gender": "Men",
+                "distance": 100,
+                "stroke": "Breaststroke",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Miller-Junk",
+                        "firstName": "Devon"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 11,
+                        "frac": 28
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Li",
+                        "firstName": "Peter"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Ryu",
+                        "firstName": "Hohyun"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 7,
+                "gender": "Women",
+                "distance": 100,
+                "stroke": "Freestyle",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Mariano",
+                        "firstName": "Jacquelyne"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 59,
+                        "frac": 54
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Loeschnik",
+                        "firstName": "Emma"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 0,
+                        "frac": 71
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Maddock",
+                        "firstName": "Sarah"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 3,
+                        "frac": 52
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Hendriks",
+                        "firstName": "Amanda"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 3,
+                        "frac": 96
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Nowicki",
+                        "firstName": "Nicole"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 4,
+                        "frac": 18
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Wheadon",
+                        "firstName": "Liz"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 6,
+                        "frac": 70
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Sherwin S8sb8sm8",
+                        "firstName": "Megan"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 25,
+                        "frac": 63
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 8,
+                "gender": "Men",
+                "distance": 100,
+                "stroke": "Freestyle",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Chu",
+                        "firstName": "Danyon"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 51,
+                        "frac": 10
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Li",
+                        "firstName": "Peter"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 51,
+                        "frac": 72
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Lojko",
+                        "firstName": "Alex"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 52,
+                        "frac": 23
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Woolven",
+                        "firstName": "Eric"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 53,
+                        "frac": 9
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Bird",
+                        "firstName": "Josh"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 53,
+                        "frac": 95
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Tebbens",
+                        "firstName": "Jacob"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 0,
+                        "frac": 9
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Ferro",
+                        "firstName": "Vincent"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 2,
+                        "frac": 55
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 9,
+                "gender": "Women",
+                "distance": 100,
+                "stroke": "Medley",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Ji",
+                        "firstName": "Christina"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 6,
+                        "frac": 0
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Kucheran",
+                        "firstName": "Emmy"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 12,
+                        "frac": 1
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Smith",
+                        "firstName": "Maggie May"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 12,
+                        "frac": 24
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Wong",
+                        "firstName": "Ellie"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 12,
+                        "frac": 50
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Bandstra",
+                        "firstName": "Jordyn"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 12,
+                        "frac": 63
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Piche",
+                        "firstName": "Megan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 20,
+                        "frac": 24
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "McGann",
+                        "firstName": "Sydney"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 21,
+                        "frac": 56
+                    }
+                },
+                {
+                    "rank": 8,
+                    "name": {
+                        "lastName": "Smallegange",
+                        "firstName": "Shaylin"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 9,
+                    "name": {
+                        "lastName": "Ivancic",
+                        "firstName": "Katie"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 10,
+                    "name": {
+                        "lastName": "Leung",
+                        "firstName": "Megan"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 10,
+                "gender": "Men",
+                "distance": 100,
+                "stroke": "Medley",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Wormald",
+                        "firstName": "Lukas"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 0,
+                        "frac": 0
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Levytskyy",
+                        "firstName": "Maksym"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 2,
+                        "frac": 0
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Gillespie-Friesen",
+                        "firstName": "Noah"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 3,
+                        "frac": 44
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Korstanje",
+                        "firstName": "Anthonie"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 4,
+                        "frac": 17
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Miller-Junk",
+                        "firstName": "Devon"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 4,
+                        "frac": 66
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Hao",
+                        "firstName": "Max"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 5,
+                        "frac": 8
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Taylor",
+                        "firstName": "Steven"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 6,
+                        "frac": 82
+                    }
+                },
+                {
+                    "rank": 8,
+                    "name": {
+                        "lastName": "Aydogan",
+                        "firstName": "Orhan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 8,
+                        "frac": 20
+                    }
+                },
+                {
+                    "rank": 9,
+                    "name": {
+                        "lastName": "Doyle",
+                        "firstName": "Ethan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 8,
+                        "frac": 40
+                    }
+                },
+                {
+                    "rank": 10,
+                    "name": {
+                        "lastName": "Li",
+                        "firstName": "Michael"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 11,
+                    "name": {
+                        "lastName": "Daniel",
+                        "firstName": "Jyasi"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 12,
+                    "name": {
+                        "lastName": "Zhang",
+                        "firstName": "Anthony"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 13,
+                    "name": {
+                        "lastName": "McCuaig S9sb9sm9",
+                        "firstName": "Cameron"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 11,
+                "gender": "Women",
+                "distance": 25,
+                "stroke": "Freestyle",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Mariano",
+                        "firstName": "Jacquelyne"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 26,
+                        "frac": 91
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Chou",
+                        "firstName": "Lou Salome"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 28,
+                        "frac": 12
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Hall",
+                        "firstName": "Sydney"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 28,
+                        "frac": 60
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Leung",
+                        "firstName": "Megan"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 28,
+                        "frac": 75
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Butler",
+                        "firstName": "Natalie"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 28,
+                        "frac": 79
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Zhang",
+                        "firstName": "Stephanie"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 29,
+                        "frac": 0
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Rudolph",
+                        "firstName": "Georgia"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 29,
+                        "frac": 17
+                    }
+                },
+                {
+                    "rank": 8,
+                    "name": {
+                        "lastName": "Bumbulis",
+                        "firstName": "Laura"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 29,
+                        "frac": 57
+                    }
+                },
+                {
+                    "rank": 9,
+                    "name": {
+                        "lastName": "Ivancic",
+                        "firstName": "Katie"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 29,
+                        "frac": 71
+                    }
+                },
+                {
+                    "rank": 10,
+                    "name": {
+                        "lastName": "MacDonald",
+                        "firstName": "Megan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 30,
+                        "frac": 7
+                    }
+                },
+                {
+                    "rank": 11,
+                    "name": {
+                        "lastName": "Smallegange",
+                        "firstName": "Shaylin"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 31,
+                        "frac": 92
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 12,
+                "gender": "Men",
+                "distance": 25,
+                "stroke": "Freestyle",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Lojko",
+                        "firstName": "Alex"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 23,
+                        "frac": 9
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Taylor",
+                        "firstName": "Michael"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 24,
+                        "frac": 32
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Filice",
+                        "firstName": "Julian"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 24,
+                        "frac": 43
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Curry",
+                        "firstName": "Tristan"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 24,
+                        "frac": 48
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Van Wyk",
+                        "firstName": "Brandon"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 25,
+                        "frac": 13
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 13,
+                "gender": "Women",
+                "distance": 300,
+                "stroke": "Medley",
+                "isRelay": true
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "team": "UW Warriors",
+                    "relay": "A",
+                    "seedTime": {
+                        "min": 3,
+                        "sec": 19,
+                        "frac": 12
+                    }
+                },
+                {
+                    "rank": 2,
+                    "team": "Brock University Badgers",
+                    "relay": "A",
+                    "seedTime": {
+                        "min": 3,
+                        "sec": 21,
+                        "frac": 60
+                    }
+                },
+                {
+                    "rank": 3,
+                    "team": "Brock University Badgers",
+                    "relay": "B",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 4,
+                    "team": "Brock University Badgers",
+                    "relay": "C",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 5,
+                    "team": "UW Warriors",
+                    "relay": "B",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 6,
+                    "team": "UW Warriors",
+                    "relay": "C",
+                    "seedTime": "NT"
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 14,
+                "gender": "Men",
+                "distance": 300,
+                "stroke": "Medley",
+                "isRelay": true
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "team": "UW Warriors",
+                    "relay": "A",
+                    "seedTime": {
+                        "min": 2,
+                        "sec": 53,
+                        "frac": 16
+                    }
+                },
+                {
+                    "rank": 2,
+                    "team": "Brock University Badgers",
+                    "relay": "A",
+                    "seedTime": {
+                        "min": 3,
+                        "sec": 7,
+                        "frac": 91
+                    }
+                },
+                {
+                    "rank": 3,
+                    "team": "Brock University Badgers",
+                    "relay": "B",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 4,
+                    "team": "UW Warriors",
+                    "relay": "B",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 5,
+                    "team": "UW Warriors",
+                    "relay": "C",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 6,
+                    "team": "UW Warriors",
+                    "relay": "D",
+                    "seedTime": "NT"
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 17,
+                "gender": "Women",
+                "distance": 200,
+                "stroke": "Backstroke",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "vanLeeuwen",
+                        "firstName": "Jocelyn"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 18,
+                "gender": "Men",
+                "distance": 200,
+                "stroke": "Backstroke",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Gillespie-Friesen",
+                        "firstName": "Noah"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 2,
+                        "sec": 5,
+                        "frac": 11
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 20,
+                "gender": "Men",
+                "distance": 200,
+                "stroke": "Breaststroke",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Chambers",
+                        "firstName": "Ian"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 2,
+                        "sec": 22,
+                        "frac": 27
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Hao",
+                        "firstName": "Max"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 2,
+                        "sec": 25,
+                        "frac": 66
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Miller-Junk",
+                        "firstName": "Devon"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 2,
+                        "sec": 37,
+                        "frac": 14
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 21,
+                "gender": "Women",
+                "distance": 200,
+                "stroke": "Freestyle",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "vanLeeuwen",
+                        "firstName": "Jocelyn"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 2,
+                        "sec": 3,
+                        "frac": 96
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Smallegange",
+                        "firstName": "Shaylin"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 2,
+                        "sec": 19,
+                        "frac": 88
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 22,
+                "gender": "Men",
+                "distance": 200,
+                "stroke": "Freestyle",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Woolven",
+                        "firstName": "Eric"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 55,
+                        "frac": 40
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Alsan",
+                        "firstName": "Kaan"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 55,
+                        "frac": 63
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Chu",
+                        "firstName": "Danyon"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 55,
+                        "frac": 97
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Li",
+                        "firstName": "Michael"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 56,
+                        "frac": 12
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Rogozynski",
+                        "firstName": "Noah"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 2,
+                        "sec": 2,
+                        "frac": 6
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Kelly",
+                        "firstName": "Sean"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 2,
+                        "sec": 6,
+                        "frac": 2
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 23,
+                "gender": "Women",
+                "distance": 200,
+                "stroke": "Medley",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Lavergne",
+                        "firstName": "Paige"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 2,
+                        "sec": 28,
+                        "frac": 92
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 24,
+                "gender": "Men",
+                "distance": 200,
+                "stroke": "Medley",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Levytskyy",
+                        "firstName": "Maksym"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 2,
+                        "sec": 18,
+                        "frac": 0
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Kelly",
+                        "firstName": "Sean"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 2,
+                        "sec": 19,
+                        "frac": 59
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 25,
+                "gender": "Women",
+                "distance": 50,
+                "stroke": "Butterfly",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Smith",
+                        "firstName": "Maggie May"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 28,
+                        "frac": 76
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Loeschnik",
+                        "firstName": "Emma"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 29,
+                        "frac": 59
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Kucheran",
+                        "firstName": "Emmy"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 30,
+                        "frac": 48
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Butler",
+                        "firstName": "Natalie"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 30,
+                        "frac": 90
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Leung",
+                        "firstName": "Megan"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 31,
+                        "frac": 1
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Zhang",
+                        "firstName": "Stephanie"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 31,
+                        "frac": 21
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Nowicki",
+                        "firstName": "Nicole"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 31,
+                        "frac": 22
+                    }
+                },
+                {
+                    "rank": 8,
+                    "name": {
+                        "lastName": "Chong",
+                        "firstName": "Cassandra"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 31,
+                        "frac": 35
+                    }
+                },
+                {
+                    "rank": 9,
+                    "name": {
+                        "lastName": "Ladyman",
+                        "firstName": "Eloise"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 31,
+                        "frac": 48
+                    }
+                },
+                {
+                    "rank": 10,
+                    "name": {
+                        "lastName": "Wheadon",
+                        "firstName": "Liz"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 33,
+                        "frac": 17
+                    }
+                },
+                {
+                    "rank": 11,
+                    "name": {
+                        "lastName": "Bandstra",
+                        "firstName": "Jordyn"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 33,
+                        "frac": 30
+                    }
+                },
+                {
+                    "rank": 12,
+                    "name": {
+                        "lastName": "MacDonald",
+                        "firstName": "Megan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 34,
+                        "frac": 92
+                    }
+                },
+                {
+                    "rank": 13,
+                    "name": {
+                        "lastName": "McGann",
+                        "firstName": "Sydney"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 35,
+                        "frac": 26
+                    }
+                },
+                {
+                    "rank": 14,
+                    "name": {
+                        "lastName": "Sherwin S8sb8sm8",
+                        "firstName": "Megan"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 41,
+                        "frac": 76
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 26,
+                "gender": "Men",
+                "distance": 50,
+                "stroke": "Butterfly",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Alsan",
+                        "firstName": "Kaan"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 26,
+                        "frac": 77
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Taylor",
+                        "firstName": "Steven"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 26,
+                        "frac": 85
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Bird",
+                        "firstName": "Josh"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 27,
+                        "frac": 7
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Chambers",
+                        "firstName": "Ian"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 27,
+                        "frac": 25
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Bozyigit",
+                        "firstName": "Gokhan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 27,
+                        "frac": 68
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Zhang",
+                        "firstName": "Anthony"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 28,
+                        "frac": 26
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Tebbens",
+                        "firstName": "Jacob"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 28,
+                        "frac": 70
+                    }
+                },
+                {
+                    "rank": 8,
+                    "name": {
+                        "lastName": "Korstanje",
+                        "firstName": "Anthonie"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 29,
+                        "frac": 63
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 27,
+                "gender": "Women",
+                "distance": 50,
+                "stroke": "Backstroke",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Chou",
+                        "firstName": "Lou Salome"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 29,
+                        "frac": 67
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "MacKinnon",
+                        "firstName": "Morley"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 30,
+                        "frac": 97
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Hendriks",
+                        "firstName": "Amanda"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 31,
+                        "frac": 46
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Du Toit",
+                        "firstName": "Amileigh"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 32,
+                        "frac": 0
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Hall",
+                        "firstName": "Sydney"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 32,
+                        "frac": 16
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Chong",
+                        "firstName": "Cassandra"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 32,
+                        "frac": 32
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Wong",
+                        "firstName": "Ellie"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 32,
+                        "frac": 51
+                    }
+                },
+                {
+                    "rank": 8,
+                    "name": {
+                        "lastName": "Funk",
+                        "firstName": "Celine"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 34,
+                        "frac": 35
+                    }
+                },
+                {
+                    "rank": 9,
+                    "name": {
+                        "lastName": "Piche",
+                        "firstName": "Megan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 39,
+                        "frac": 5
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 28,
+                "gender": "Men",
+                "distance": 50,
+                "stroke": "Backstroke",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Van Wyk",
+                        "firstName": "Brandon"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 27,
+                        "frac": 67
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Gillespie-Friesen",
+                        "firstName": "Noah"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 28,
+                        "frac": 49
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Doyle",
+                        "firstName": "Ethan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 30,
+                        "frac": 54
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Filice",
+                        "firstName": "Julian"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 31,
+                        "frac": 69
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "McCuaig S9sb9sm9",
+                        "firstName": "Cameron"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 31,
+                        "frac": 93
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 29,
+                "gender": "Women",
+                "distance": 50,
+                "stroke": "Breaststroke",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Nowicki",
+                        "firstName": "Nicole"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 33,
+                        "frac": 56
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Bumbulis",
+                        "firstName": "Laura"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 34,
+                        "frac": 31
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Maddock",
+                        "firstName": "Sarah"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 38,
+                        "frac": 22
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Piche",
+                        "firstName": "Megan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 38,
+                        "frac": 69
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Romano",
+                        "firstName": "Sonia"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 38,
+                        "frac": 90
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Lavergne",
+                        "firstName": "Paige"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 38,
+                        "frac": 97
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Rudolph",
+                        "firstName": "Georgia"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 39,
+                        "frac": 86
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 30,
+                "gender": "Men",
+                "distance": 50,
+                "stroke": "Breaststroke",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Curry",
+                        "firstName": "Tristan"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 30,
+                        "frac": 23
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Zhang",
+                        "firstName": "Anthony"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 30,
+                        "frac": 52
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Hao",
+                        "firstName": "Max"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 30,
+                        "frac": 82
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Aydogan",
+                        "firstName": "Orhan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 31,
+                        "frac": 36
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Taylor",
+                        "firstName": "Michael"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 32,
+                        "frac": 6
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Rogozynski",
+                        "firstName": "Noah"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 32,
+                        "frac": 50
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Kelly",
+                        "firstName": "Sean"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 37,
+                        "frac": 33
+                    }
+                },
+                {
+                    "rank": 8,
+                    "name": {
+                        "lastName": "Ferro",
+                        "firstName": "Vincent"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 39,
+                        "frac": 53
+                    }
+                },
+                {
+                    "rank": 9,
+                    "name": {
+                        "lastName": "Daniel",
+                        "firstName": "Jyasi"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": "NT"
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 31,
+                "gender": "Women",
+                "distance": 50,
+                "stroke": "Freestyle",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Mariano",
+                        "firstName": "Jacquelyne"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 26,
+                        "frac": 91
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Ladyman",
+                        "firstName": "Eloise"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 27,
+                        "frac": 35
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Wong",
+                        "firstName": "Ellie"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 28,
+                        "frac": 5
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Loeschnik",
+                        "firstName": "Emma"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 28,
+                        "frac": 56
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Ji",
+                        "firstName": "Christina"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 28,
+                        "frac": 82
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "MacKinnon",
+                        "firstName": "Morley"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 29,
+                        "frac": 0
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Smith",
+                        "firstName": "Maggie May"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 29,
+                        "frac": 6
+                    }
+                },
+                {
+                    "rank": 8,
+                    "name": {
+                        "lastName": "Ivancic",
+                        "firstName": "Katie"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 29,
+                        "frac": 71
+                    }
+                },
+                {
+                    "rank": 9,
+                    "name": {
+                        "lastName": "Funk",
+                        "firstName": "Celine"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 29,
+                        "frac": 93
+                    }
+                },
+                {
+                    "rank": 10,
+                    "name": {
+                        "lastName": "MacDonald",
+                        "firstName": "Megan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 30,
+                        "frac": 7
+                    }
+                },
+                {
+                    "rank": 11,
+                    "name": {
+                        "lastName": "Romano",
+                        "firstName": "Sonia"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 32,
+                        "frac": 25
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 32,
+                "gender": "Men",
+                "distance": 50,
+                "stroke": "Freestyle",
+                "isRelay": false
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "name": {
+                        "lastName": "Chu",
+                        "firstName": "Danyon"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 23,
+                        "frac": 55
+                    }
+                },
+                {
+                    "rank": 2,
+                    "name": {
+                        "lastName": "Wormald",
+                        "firstName": "Lukas"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 24,
+                        "frac": 56
+                    }
+                },
+                {
+                    "rank": 3,
+                    "name": {
+                        "lastName": "Levytskyy",
+                        "firstName": "Maksym"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 24,
+                        "frac": 90
+                    }
+                },
+                {
+                    "rank": 4,
+                    "name": {
+                        "lastName": "Woolven",
+                        "firstName": "Eric"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 25,
+                        "frac": 22
+                    }
+                },
+                {
+                    "rank": 5,
+                    "name": {
+                        "lastName": "Taylor",
+                        "firstName": "Steven"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 25,
+                        "frac": 57
+                    }
+                },
+                {
+                    "rank": 6,
+                    "name": {
+                        "lastName": "Kalra",
+                        "firstName": "Navraj"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 26,
+                        "frac": 45
+                    }
+                },
+                {
+                    "rank": 7,
+                    "name": {
+                        "lastName": "Rogozynski",
+                        "firstName": "Noah"
+                    },
+                    "team": "UW Warriors",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 26,
+                        "frac": 47
+                    }
+                },
+                {
+                    "rank": 8,
+                    "name": {
+                        "lastName": "Korstanje",
+                        "firstName": "Anthonie"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 26,
+                        "frac": 97
+                    }
+                },
+                {
+                    "rank": 9,
+                    "name": {
+                        "lastName": "Doyle",
+                        "firstName": "Ethan"
+                    },
+                    "team": "Brock University Badgers",
+                    "seedTime": {
+                        "min": 0,
+                        "sec": 27,
+                        "frac": 62
+                    }
+                }
+            ]
+        },
+        {
+            "event": {
+                "eventNum": 33,
+                "gender": "Mixed",
+                "distance": 200,
+                "stroke": "Freestyle",
+                "isRelay": true
+            },
+            "entries": [
+                {
+                    "rank": 1,
+                    "team": "Brock University Badgers",
+                    "relay": "A",
+                    "seedTime": {
+                        "min": 1,
+                        "sec": 42,
+                        "frac": 4
+                    }
+                },
+                {
+                    "rank": 2,
+                    "team": "Brock University Badgers",
+                    "relay": "B",
+                    "seedTime": "NT"
+                },
+                {
+                    "rank": 3,
+                    "team": "Brock University Badgers",
+                    "relay": "C",
+                    "seedTime": "NT"
+                }
+            ]
+        }
+    ]
+}

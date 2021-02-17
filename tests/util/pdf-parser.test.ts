@@ -1,34 +1,25 @@
 import { resolve } from "path";
 import PDFParser from "../../src/util/pdf-parser";
-import MeetValidator from "../../src/util/meet-validator";
 import Logger from "../../src/util/logger";
-import PointsCalculator from "../../src/util/points-calculator";
+import { readFileSync } from "fs";
 
 describe("pdf-converter", () => {
     const LOG_PATH = "pdf-parser-test.json";
-    const LOG_PATH2 = "pdf-parser-points.json";
     let logger: Logger;
 
     beforeAll(() => {
         logger = new Logger(LOG_PATH);
     });
 
-    test("successfully converts pdf to meet data", async () => {
-        const inputPdf = "../../data/example1.pdf";
-        const fullPath = resolve(__dirname, inputPdf);
+    test("successfully converts psych sheet to meet data", async () => {
+        const input1 = "../../data/psych-sheet/psych-sheet-0.pdf";
+        const fullPath1 = resolve(__dirname, input1);
+        const rawOutput1 = readFileSync(resolve(__dirname, "../../data/psych-sheet/data-0.json"));
+        const expectedOutput1 = JSON.parse(rawOutput1.toString());
 
-        const parser = new PDFParser(fullPath);
+        const parser = new PDFParser(fullPath1);
         const output = await parser.getText();
         logger.log(JSON.stringify(output));
-        expect(output.eventEntries.length).not.toBe(0);
-
-        const validator = new MeetValidator();
-        const missingInfo = validator.getMissingInfo(output);
-        expect(missingInfo.missingEntries.length).toEqual(0);
-        expect(missingInfo.missingEvents.length).toEqual(0);
-
-        const pointsCalculator = new PointsCalculator();
-        const points = pointsCalculator.calculateTeamPoints(output.eventEntries);
-        Logger.log(JSON.stringify(points), LOG_PATH2);
+        expect(output).toEqual(expectedOutput1);
     });
 });

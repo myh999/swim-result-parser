@@ -1,5 +1,5 @@
-import { Team } from "./common";
+import { TeamMeetInfo } from "./common";
 
 export interface Config {
-    teams: Team[];
+    teams: TeamMeetInfo[];
 }

@@ -5,7 +5,7 @@ import {
     TextContent,
     TextItem,
 } from "pdfjs-dist/types/display/api";
-import { Entry, EventEntry, Meet, Event, Time, Name, AlternateTime } from "../types/common";
+import { Entry, EventEntry, PsychSheet, Event, Time, Name, AlternateTime } from "../types/common";
 import Logger from "./logger";
 import StringMatcher from "./string-matcher";
 
@@ -210,7 +210,7 @@ class PDFParser {
         return eventEntries;
     }
 
-    public async getText(): Promise<Meet> {
+    public async getText(): Promise<PsychSheet> {
         const doc: PDFDocumentProxy = await getDocument(this.path).promise;
         const pagePromises: Promise<PageInfo>[] = [];
         for (let i = 0; i < doc.numPages; i++) {

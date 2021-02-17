@@ -1,14 +1,11 @@
-import { Name, Team, Time, Event, Gender, Stroke } from "../../src/types/common";
+import { Name, Time, Event, Gender, Stroke } from "../../src/types/common";
 import StringMatcher from "../../src/util/string-matcher";
-import { readFileSync } from "fs";
-import { resolve } from "path";
 
 describe("string-matcher", () => {
 
     let matcher: StringMatcher;
 
     beforeAll(() => {
-        const rawConfig = readFileSync(resolve(__dirname, "../../data/config0.json"));
         matcher = new StringMatcher();
     });
 

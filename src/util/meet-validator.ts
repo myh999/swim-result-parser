@@ -1,4 +1,4 @@
-import { Entry, EventEntry, Meet } from "../types/common";
+import { Entry, EventEntry, MeetInfo, PsychSheet } from "../types/common";
 import Logger from "./logger";
 
 const LOG_PATH = "meet-validator.log";
@@ -8,13 +8,22 @@ export interface MissingEntry {
     rank: number;
 }
 
-export interface MissingInfo {
+export interface MissingEventInfo {
     missingEvents: number[];
     missingEntries: MissingEntry[];
 }
 
+interface TeamNameMap {
+    [teamID: string]: string;
+}
+
 // TODO: This entire thing can probably be optimized
 class MeetValidator {
+    private meetInfo: MeetInfo;
+
+    constructor(meetInfo: MeetInfo) {
+        this.meetInfo = meetInfo;
+    }
 
     private getMissingEntries(eventEntry: EventEntry): MissingEntry[] {
         let expectedRank = 1;
@@ -40,8 +49,8 @@ class MeetValidator {
         return missingEntries;
     }
 
-    public getMissingInfo(meet: Meet): MissingInfo {
-        const sortedEventEntries: EventEntry[] = meet.eventEntries.sort((eventEntry1: EventEntry, eventEntry2: EventEntry): number => {
+    public getMissingEventEntries(eventEntries: EventEntry[]): MissingEventInfo {
+        const sortedEventEntries: EventEntry[] = eventEntries.sort((eventEntry1: EventEntry, eventEntry2: EventEntry): number => {
             return eventEntry1.event.eventNum - eventEntry2.event.eventNum;
         });
         const missingEvents: number[] = [];
@@ -62,11 +71,39 @@ class MeetValidator {
             missingEntries.push(...this.getMissingEntries(eventEntry));
         }
 
-        const result: MissingInfo = {
+        const result: MissingEventInfo = {
             missingEntries,
             missingEvents
         };
         Logger.log(JSON.stringify(result), LOG_PATH);
+        return result;
+    }
+
+    // Map relay team names to their respective individual team names
+    public getAccurateTeamNames(eventEntries: EventEntry[]): EventEntry[] {
+        const individualMap: TeamNameMap = {};
+        const relayMap: TeamNameMap = {};
+        const result: EventEntry[] = [];
+        for (const teamInfo of this.meetInfo.teamInfo) {
+            individualMap[teamInfo.teamID] = teamInfo.individualName;
+            relayMap[teamInfo.teamID] = teamInfo.relayName;
+        }
+        for (const eventEntry of eventEntries) {
+            const isRelay = eventEntry.event.isRelay;
+            const entries: Entry[] = [];
+            for (const entry of eventEntry.entries) {
+                const prevName = entry.team;
+                const map = isRelay ? relayMap : individualMap;
+                const newName = map[prevName] ? map[prevName] : prevName;
+                const newEntry = {...entry};
+                newEntry.team = newName;
+                entries.push(newEntry);
+            }
+            result.push({
+                event: eventEntry.event,
+                entries
+            });
+        }
         return result;
     }
 }

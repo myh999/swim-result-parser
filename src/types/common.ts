@@ -30,10 +30,10 @@ export interface Event {
     isRelay: boolean;
 }
 
-export interface Team {
-    name: string;
+export interface TeamMeetInfo {
+    teamID: string;
     individualName: string;
-    relayName: string;
+    relayName?: string;
 }
 
 export interface Time {
@@ -54,11 +54,15 @@ export interface EventEntry {
     entries: Entry[];
 }
 
-export interface Meet {
+export interface PsychSheet {
     eventEntries: EventEntry[];
 }
 
 export interface TeamPoints {
     teamName: string;
     points: number;
+}
+
+export interface MeetInfo {
+    teamInfo: TeamMeetInfo[];
 }
