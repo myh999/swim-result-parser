@@ -4,11 +4,11 @@ import Logger from "../../src/util/logger";
 import { readFileSync } from "fs";
 
 describe("pdf-converter", () => {
-    const LOG_PATH = "pdf-parser-test.json";
+    const LOG_PATH = "pdf-parser-test";
     let logger: Logger;
 
     beforeAll(() => {
-        logger = new Logger(LOG_PATH);
+        logger = new Logger(LOG_PATH, "json");
     });
 
     test("successfully converts psych sheet to meet data", async () => {

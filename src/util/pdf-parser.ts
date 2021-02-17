@@ -11,7 +11,7 @@ import StringMatcher from "./string-matcher";
 
 const COL_ERR = 10;
 const ROW_ERR = 5;
-const LOG_PATH = "pdf-parser.log";
+const LOG_PATH = "pdf-parser";
 
 interface TextInfo {
     text: string;

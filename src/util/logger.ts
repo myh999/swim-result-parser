@@ -7,8 +7,8 @@ class Logger {
     path: string;
     enabled: string;
 
-    constructor(path: string) {
-        this.path = resolve(LOG_BASE, path);
+    constructor(path: string, extension = "log") {
+        this.path = resolve(LOG_BASE, `${path}-${new Date().toISOString().replace(/[\/\\:]/g, "_")}.${extension}`);
         const basePath = resolve(LOG_BASE);
         if (!existsSync(basePath)) {
             mkdirSync(basePath);
@@ -18,16 +18,6 @@ class Logger {
 
     public log(message: string): void {
         appendFileSync(this.path, message + "\n");
-    }
-
-    public static clearLog(path: string) {
-        const resolvedPath = resolve(LOG_BASE, path);
-        writeFileSync(resolvedPath, "");
-    }
-
-    public static log(message: string, path: string) {
-        const resolvedPath = resolve(LOG_BASE, path);
-        appendFileSync(resolvedPath, message + "\n");
     }
 }
 

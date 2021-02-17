@@ -1,7 +1,7 @@
-import { Entry, EventEntry, MeetInfo, PsychSheet } from "../types/common";
+import { Entry, EventEntry, MeetInfo } from "../types/common";
 import Logger from "./logger";
 
-const LOG_PATH = "meet-validator.log";
+const LOG_NAME = "meet-validator";
 
 export interface MissingEntry {
     eventNum: number;
@@ -20,9 +20,11 @@ interface TeamNameMap {
 // TODO: This entire thing can probably be optimized
 class MeetValidator {
     private meetInfo: MeetInfo;
+    private logger: Logger;
 
     constructor(meetInfo: MeetInfo) {
         this.meetInfo = meetInfo;
+        this.logger = new Logger(LOG_NAME);
     }
 
     private getMissingEntries(eventEntry: EventEntry): MissingEntry[] {
@@ -43,7 +45,7 @@ class MeetValidator {
             } else if (entry.rank < expectedRank) {
                 throw Error("MeetValidator.GetMissingInfo: Current rank is less than the expected rank");
             }
-            Logger.log(JSON.stringify(entry), LOG_PATH);
+            this.logger.log(JSON.stringify(entry));
             expectedRank++;
         }
         return missingEntries;
@@ -56,7 +58,6 @@ class MeetValidator {
         const missingEvents: number[] = [];
         const missingEntries: MissingEntry[] = [];
         let expectedEventNum = 1;
-        Logger.clearLog(LOG_PATH);
         for (const eventEntry of sortedEventEntries) {
             if (eventEntry.event.eventNum > expectedEventNum) {
                 while (expectedEventNum < eventEntry.event.eventNum) {
@@ -67,7 +68,7 @@ class MeetValidator {
                 throw Error("MeetValidator.GetMissingInfo: Current event num is less than the expected even num");
             }
             expectedEventNum++;
-            Logger.log(JSON.stringify(eventEntry.event), LOG_PATH);
+            this.logger.log(JSON.stringify(eventEntry.event));
             missingEntries.push(...this.getMissingEntries(eventEntry));
         }
 
@@ -75,7 +76,7 @@ class MeetValidator {
             missingEntries,
             missingEvents
         };
-        Logger.log(JSON.stringify(result), LOG_PATH);
+        this.logger.log(JSON.stringify(result));
         return result;
     }
 
