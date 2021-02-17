@@ -1,37 +1,35 @@
 {
-  "name": "swim-result-parser",
-  "version": "1.0.0",
-  "description": "Swim result parser",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "./node_modules/.bin/tsc -p ./tsconfig.json",
-    "watch": "./node_modules/.bin/tsc -p ./tsconfig.json -w",
-    "test": "./node_modules/.bin/jest -i --no-cache --config ./jest.json",
-    "lint": "./node_modules/.bin/eslint ./src ./tests --ext .ts",
-    "clearlogs": "./node_modules/.bin/rimraf -r ./log/*"
-  },
-  "files": [
-    "dist"
-  ],
-  "author": "Max Hao",
-  "license": "MIT",
-  "dependencies": {
-    "eslint-plugin-no-null": "^1.0.2",
-    "express": "^4.17.1",
-    "pdfjs-dist": "^2.6.347"
-  },
-  "devDependencies": {
-    "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.28",
-    "@typescript-eslint/eslint-plugin": "^4.15.1",
-    "@typescript-eslint/parser": "^4.15.1",
-    "coveralls": "^3.1.0",
-    "eslint": "^7.20.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsdoc": "^32.0.2",
-    "jest": "^26.6.3",
-    "rimraf": "^3.0.2",
-    "ts-jest": "^26.5.1",
-    "typescript": "^4.1.5"
-  }
+    "name": "swim-result-parser",
+    "version": "1.0.0",
+    "description": "Swim result parser",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "./node_modules/.bin/tsc -p ./tsconfig.json",
+        "watch": "./node_modules/.bin/tsc -p ./tsconfig.json -w",
+        "test": "./node_modules/.bin/jest -i --no-cache --config ./jest.json",
+        "lint": "./node_modules/.bin/eslint ./src ./tests --ext .ts",
+        "clearlogs": "./node_modules/.bin/rimraf -r ./log/*"
+    },
+    "files": [
+        "dist"
+    ],
+    "author": "Max Hao",
+    "license": "MIT",
+    "dependencies": {
+        "eslint-plugin-no-null": "^1.0.2",
+        "express": "^4.17.1",
+        "pdfjs-dist": "^2.6.347"
+    },
+    "devDependencies": {
+        "@types/jest": "^26.0.20",
+        "@types/node": "^14.14.28",
+        "@typescript-eslint/eslint-plugin": "^4.15.1",
+        "@typescript-eslint/parser": "^4.15.1",
+        "coveralls": "^3.1.0",
+        "eslint": "^7.20.0",
+        "jest": "^26.6.3",
+        "rimraf": "^3.0.2",
+        "ts-jest": "^26.5.1",
+        "typescript": "^4.1.5"
+    }
 }
