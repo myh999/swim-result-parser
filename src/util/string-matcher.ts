@@ -32,30 +32,27 @@ class StringMatcher {
 
         const matched = trimmed.search(new RegExp(TIME_PATTERN));
         if (matched === -1) return undefined;
-        let min: number;
-        let sec: number;
-        let frac: number;
+        const result: Time = {
+            min: 0,
+            sec: 0,
+            frac: 0
+        };
         let currentString = trimmed;
         let currentSplit = currentString.split(":");
         if (currentSplit.length === 1) {
-            min = 0;
             currentString = currentSplit[0];
         } else {
-            min = parseInt(currentSplit[0]);
+            result.min = parseInt(currentSplit[0]);
             currentString = currentSplit[1];
         }
         currentSplit = currentString.split(".");
         if (currentSplit.length !== 2) {
             return undefined;
         }
-        sec = parseInt(currentSplit[0]);
-        frac = parseInt(currentSplit[1]);
+        result.sec = parseInt(currentSplit[0]);
+        result.frac = parseInt(currentSplit[1]);
 
-        return {
-            min,
-            sec,
-            frac
-        };
+        return result;
     }
 
     public getAlternateTime(input: string): AlternateTime {
@@ -71,12 +68,13 @@ class StringMatcher {
     public getEvent(input: string): Event {
         const eventString = "Event";
         const relayString = "Relay";
-
-        let eventNum: number;
-        let gender: Gender;
-        let distance: number;
-        let stroke: Stroke;
-        let isRelay: boolean;
+        const result: Event = {
+            eventNum: undefined,
+            gender: undefined,
+            distance: undefined,
+            stroke: undefined,
+            isRelay: undefined
+        };
 
         let index = 0;
         let currentString = input;
@@ -84,52 +82,45 @@ class StringMatcher {
         if (index === -1) return undefined;
 
         currentString = currentString.slice(index + eventString.length, currentString.length);
-        eventNum = parseInt(currentString);
-        if (isNaN(eventNum)) return undefined;
+        result.eventNum = parseInt(currentString);
+        if (isNaN(result.eventNum)) return undefined;
 
         Object.values(Gender).forEach((compare: Gender) => {
             const tmpIndex = currentString.search(compare);
             if (tmpIndex !== -1) {
-                gender = compare;
+                result.gender = compare;
                 index = tmpIndex;
             }
         });
 
-        if (!gender) return undefined;
-        currentString = currentString.slice(index + gender.length, currentString.length);
+        if (!result.gender) return undefined;
+        currentString = currentString.slice(index + result.gender.length, currentString.length);
 
-        distance = parseInt(currentString);
-        if (isNaN(distance)) return undefined;
+        result.distance = parseInt(currentString);
+        if (isNaN(result.distance)) return undefined;
 
         Object.values(Stroke).forEach((compare: Stroke) => {
             let tmpIndex = currentString.search(compare);
             if (tmpIndex !== -1) {
-                stroke = compare;
+                result.stroke = compare;
             }
             if (compare === Stroke.MEDLEY) {
                 tmpIndex = currentString.search("IM");
                 if (tmpIndex !== -1) {
-                    stroke = compare;
+                    result.stroke = compare;
                 }
             }
         });
 
-        if (!stroke) return undefined;
+        if (!result.stroke) return undefined;
 
         index = currentString.search(relayString);
         if (index !== -1) {
-            isRelay = true;
+            result.isRelay = true;
         } else {
-            isRelay = false;
+            result.isRelay = false;
         }
-
-        return {
-            eventNum,
-            gender,
-            distance,
-            stroke,
-            isRelay
-        };
+        return result;
     }
 }
 

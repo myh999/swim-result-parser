@@ -46,7 +46,7 @@ export interface Time {
 export interface Entry {
     rank: number;
     team: string;
-    [other: string]: any;
+    [other: string]: number | string | Time | Name;
 }
 
 export interface EventEntry {
@@ -64,5 +64,9 @@ export interface TeamPoints {
 }
 
 export interface MeetInfo {
+    pointsSystem?: {
+        individualPointsSystem: number[];
+        relayPointsSystem?: number[];
+    };
     teamInfo: TeamMeetInfo[];
 }

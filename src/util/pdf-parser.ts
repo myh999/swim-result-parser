@@ -43,15 +43,13 @@ class PDFParser {
     private async getTextFromPage(doc: PDFDocumentProxy, pageNum: number): Promise<PageInfo> {
         const page: PDFPageProxy = await doc.getPage(pageNum);
         const content: TextContent = await page.getTextContent();
-        const textInfo: TextInfo[] = content.items.map((item: TextItem) => {
-            return {
-                text: item.str,
-                height: item.height,
-                width: item.width,
-                xPos: item.transform[4],
-                yPos: item.transform[5]
-            };
-        });
+        const textInfo: TextInfo[] = content.items.map((item: TextItem) => ({
+            text: item.str,
+            height: item.height,
+            width: item.width,
+            xPos: item.transform[4],
+            yPos: item.transform[5]
+        }));
         return {
             width: page.view[2],
             height: page.view[3],
@@ -60,9 +58,7 @@ class PDFParser {
     }
 
     private getEntry(row: TextInfo[], currentEvent: Event): Entry {
-        row = row.sort((text1: TextInfo, text2: TextInfo) => {
-            return text1.xPos - text2.xPos;
-        });
+        row = row.sort((text1: TextInfo, text2: TextInfo) => text1.xPos - text2.xPos);
 
         const log = row.map((info) => ({ text: info.text, xPos: info.xPos }));
         this.logger.log(JSON.stringify(log));
@@ -153,19 +149,17 @@ class PDFParser {
         this.columns.forEach((colPos: number, index: number) => {
             const startPos = colPos;
             const endPos = index < this.columns.length - 1 ? this.columns[index + 1] : page.width;
-            const group: TextInfo[] = page.text.filter((textInfo: TextInfo): boolean => {
-                return textInfo.xPos >= startPos && textInfo.xPos <= endPos - COL_ERR;
-            });
+            const group: TextInfo[] = page.text.filter((textInfo: TextInfo): boolean => textInfo.xPos >= startPos && textInfo.xPos <= endPos - COL_ERR);
             groupedLines.push(group);
         });
         let currentEvent: Event;
         let currentEntries: Entry[] = [];
         for (const lineGroup of groupedLines) {
             // Sort lines from top to bottom
-            const sortedGroup: TextInfo[] = lineGroup.sort((line1: TextInfo, line2: TextInfo): number => {
+            const sortedGroup: TextInfo[] = lineGroup.sort((line1: TextInfo, line2: TextInfo): number =>
                 // Descending order
-                return line2.yPos - line1.yPos;
-            });
+                line2.yPos - line1.yPos
+            );
             let index = 0;
             while (index < sortedGroup.length) {
                 const currentYPos = sortedGroup[index].yPos;
@@ -227,9 +221,7 @@ class PDFParser {
         }
         for (const textInfo of texts) {
             if (this.matcher.getEvent(textInfo.text)) {
-                if (!this.columns.some((col: number): boolean => {
-                    return Math.abs(col - textInfo.xPos) < COL_ERR;
-                })) {
+                if (!this.columns.some((col: number): boolean => Math.abs(col - textInfo.xPos) < COL_ERR)) {
                     this.columns.push(textInfo.xPos);
                 }
             }
@@ -244,9 +236,7 @@ class PDFParser {
         // TODO: We can optimize this
         const mergedEntries: EventEntry[] = [];
         for (const entry of eventEntries) {
-            const duplicateEntry = mergedEntries.find((compare: EventEntry): boolean => {
-                return compare.event.eventNum === entry.event.eventNum;
-            });
+            const duplicateEntry = mergedEntries.find((compare: EventEntry): boolean => compare.event.eventNum === entry.event.eventNum);
             if (duplicateEntry) {
                 duplicateEntry.entries.push(...entry.entries);
             } else {

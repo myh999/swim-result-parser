@@ -1,7 +1,10 @@
-import { Entry, EventEntry, MeetInfo } from "../types/common";
+import { Entry, EventEntry, MeetInfo, TeamPoints } from "../types/common";
 import Logger from "./logger";
 
 const LOG_NAME = "meet-validator";
+
+const DEFAULT_INDIVIDUAL_POINTS = [0, 20, 17, 16, 15, 14, 13, 12, 11, 9, 7, 6, 5, 4, 3, 2, 1];
+const DEFAULT_RELAY_POINTS = [0, 40, 34, 32, 30, 28, 26, 24, 22, 18, 14, 12, 10, 8, 6, 4, 2];
 
 export interface MissingEntry {
     eventNum: number;
@@ -13,12 +16,16 @@ export interface MissingEventInfo {
     missingEntries: MissingEntry[];
 }
 
+interface PointsMap {
+    [team: string]: number;
+}
+
 interface TeamNameMap {
     [teamID: string]: string;
 }
 
 // TODO: This entire thing can probably be optimized
-class MeetValidator {
+class MeetManager {
     private meetInfo: MeetInfo;
     private logger: Logger;
 
@@ -30,9 +37,7 @@ class MeetValidator {
     private getMissingEntries(eventEntry: EventEntry): MissingEntry[] {
         let expectedRank = 1;
         const missingEntries: MissingEntry[] = [];
-        const sortedEntries: Entry[] = eventEntry.entries.sort((entry1: Entry, entry2: Entry): number => {
-            return entry1.rank - entry2.rank;
-        });
+        const sortedEntries: Entry[] = eventEntry.entries.sort((entry1: Entry, entry2: Entry): number => entry1.rank - entry2.rank);
         for (const entry of sortedEntries) {
             if (entry.rank > expectedRank) {
                 while (expectedRank < entry.rank) {
@@ -52,9 +57,7 @@ class MeetValidator {
     }
 
     public getMissingEventEntries(eventEntries: EventEntry[]): MissingEventInfo {
-        const sortedEventEntries: EventEntry[] = eventEntries.sort((eventEntry1: EventEntry, eventEntry2: EventEntry): number => {
-            return eventEntry1.event.eventNum - eventEntry2.event.eventNum;
-        });
+        const sortedEventEntries: EventEntry[] = eventEntries.sort((eventEntry1: EventEntry, eventEntry2: EventEntry): number => eventEntry1.event.eventNum - eventEntry2.event.eventNum);
         const missingEvents: number[] = [];
         const missingEntries: MissingEntry[] = [];
         let expectedEventNum = 1;
@@ -107,6 +110,38 @@ class MeetValidator {
         }
         return result;
     }
+
+    public calculateTeamPoints(eventEntries: EventEntry[]): TeamPoints[] {
+        const teamPoints: TeamPoints[] = [];
+        const points: PointsMap = {};
+
+        let individualPointsSystem: number[] = DEFAULT_INDIVIDUAL_POINTS;
+        let relayPointsSystem: number[] = DEFAULT_RELAY_POINTS;
+
+        if (this.meetInfo.pointsSystem) {
+            individualPointsSystem = this.meetInfo.pointsSystem.individualPointsSystem;
+            if (this.meetInfo.pointsSystem.relayPointsSystem) {
+                relayPointsSystem = this.meetInfo.pointsSystem.relayPointsSystem;
+            }
+        }
+
+        for (const eventEntry of eventEntries) {
+            for (const entry of eventEntry.entries) {
+                if (!points[entry.team]) {
+                    points[entry.team] = 0;
+                }
+                const pointsSystem: number[] = eventEntry.event.isRelay ? relayPointsSystem : individualPointsSystem;
+                points[entry.team] += pointsSystem[entry.rank] ? pointsSystem[entry.rank] : 0;
+            }
+        }
+        for (const [key, value] of Object.entries(points)) {
+            teamPoints.push({
+                teamName: key,
+                points: value
+            });
+        }
+        return teamPoints;
+    }
 }
 
-export default MeetValidator;
+export default MeetManager;
