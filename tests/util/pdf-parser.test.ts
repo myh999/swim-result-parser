@@ -8,7 +8,7 @@ describe("pdf-converter", () => {
     let logger: Logger;
 
     beforeAll(() => {
-        logger = new Logger(LOG_PATH, "json");
+        logger = new Logger(LOG_PATH);
     });
 
     test("successfully converts psych sheet to meet data", async () => {
@@ -19,7 +19,7 @@ describe("pdf-converter", () => {
 
         const parser = new PDFParser(fullPath1);
         const output = await parser.getText();
-        logger.log(JSON.stringify(output));
+        logger.log(JSON.stringify(output, undefined, 4));
         expect(output).toEqual(expectedOutput1);
     });
 });
