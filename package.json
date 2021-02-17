@@ -10,7 +10,7 @@
         "lint": "./node_modules/.bin/eslint ./src ./tests ./analysis --ext .ts",
         "clearlog": "./node_modules/.bin/rimraf -r ./log/*",
         "psychsheet": "./node_modules/.bin/jest -t 'full-psych-sheet-analysis' --no-cache --config ./jest-analysis.json",
-        "clearanalysis": "./node_modules/.bin/rimraf -r ./analysis/output/*output*"
+        "clearanalysis": "./node_modules/.bin/rimraf -r ./analysis/*output*"
     },
     "files": [
         "dist"
