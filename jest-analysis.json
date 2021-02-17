@@ -1,0 +1,21 @@
+{
+    "globals": {
+        "ts-jest": {
+            "tsconfig": "./tsconfig.json",
+            "diagnostics": false
+        }
+    },
+    "transform": {
+        "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testRegex": "./analysis/.*\\.test.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js"
+    ],
+    "collectCoverageFrom": [
+        "src/*.ts"
+    ],
+    "testEnvironment": "node"
+}

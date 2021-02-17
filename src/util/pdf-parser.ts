@@ -95,7 +95,7 @@ class PDFParser {
             if (!seedTime) return undefined;
 
             return {
-                rank,
+                position: rank,
                 name,
                 team,
                 seedTime
@@ -134,7 +134,7 @@ class PDFParser {
             if (!seedTime) return undefined;
 
             return {
-                rank,
+                position: rank,
                 team,
                 relay,
                 seedTime

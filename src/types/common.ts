@@ -44,7 +44,7 @@ export interface Time {
 
 // This includes entries + results
 export interface Entry {
-    rank: number;
+    position: number;
     team: string;
     [other: string]: number | string | Time | Name;
 }

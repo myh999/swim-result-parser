@@ -1,22 +1,22 @@
 {
     "teams": [
         {
-            "name": "Waterloo Warriors",
+            "teamID": "Waterloo Warriors",
             "individualName": "WAT",
             "relayName": "Warriors"
         },
         {
-            "name": "Western Mustangs",
+            "teamID": "Western Mustangs",
             "individualName": "WES",
             "relayName": "Mustangs"
         },
         {
-            "name": "Laurentian Voyageurs",
+            "teamID": "Laurentian Voyageurs",
             "individualName": "LU",
             "relayName": "Voyageurs"
         },
         {
-            "name": "Toronto Varsity Blues",
+            "teamID": "Toronto Varsity Blues",
             "individualName": "UT",
             "relayName": "UT"
         }

@@ -1,12 +1,12 @@
 {
     "teams": [
         {
-            "name": "Waterloo Warriors",
+            "teamID": "Waterloo Warriors",
             "individualName": "UW Warriors",
             "relayName": "UW Warriors"
         },
         {
-            "name": "Brock Badgers",
+            "teamID": "Brock Badgers",
             "individualName": "Brock University Badgers",
             "relayName": "Brock University Badgers"
         }

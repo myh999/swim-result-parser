@@ -7,8 +7,10 @@
         "build": "./node_modules/.bin/tsc -p ./tsconfig.json",
         "watch": "./node_modules/.bin/tsc -p ./tsconfig.json -w",
         "test": "./node_modules/.bin/jest -i --no-cache --config ./jest.json",
-        "lint": "./node_modules/.bin/eslint ./src ./tests --ext .ts",
-        "clearlogs": "./node_modules/.bin/rimraf -r ./log/*"
+        "lint": "./node_modules/.bin/eslint ./src ./tests ./analysis --ext .ts",
+        "clearlog": "./node_modules/.bin/rimraf -r ./log/*",
+        "psychsheet": "./node_modules/.bin/jest -t 'full-psych-sheet-analysis' --no-cache --config ./jest-analysis.json",
+        "clearanalysis": "./node_modules/.bin/rimraf -r ./analysis/output/*output*"
     },
     "files": [
         "dist"

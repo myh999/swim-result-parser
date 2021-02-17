@@ -1,7 +1,7 @@
 import { Entry, EventEntry, MeetInfo, TeamPoints } from "../types/common";
 import Logger from "./logger";
 
-const LOG_NAME = "meet-validator";
+const LOG_NAME = "meet-manager";
 
 const DEFAULT_INDIVIDUAL_POINTS = [0, 20, 17, 16, 15, 14, 13, 12, 11, 9, 7, 6, 5, 4, 3, 2, 1];
 const DEFAULT_RELAY_POINTS = [0, 40, 34, 32, 30, 28, 26, 24, 22, 18, 14, 12, 10, 8, 6, 4, 2];
@@ -14,6 +14,12 @@ export interface MissingEntry {
 export interface MissingEventInfo {
     missingEvents: number[];
     missingEntries: MissingEntry[];
+    errorEntries: MissingEntry[];
+}
+
+interface GetMissingEntriesInfo {
+    missingEntries: MissingEntry[];
+    errorEntries: MissingEntry[];
 }
 
 interface PointsMap {
@@ -34,32 +40,44 @@ class MeetManager {
         this.logger = new Logger(LOG_NAME);
     }
 
-    private getMissingEntries(eventEntry: EventEntry): MissingEntry[] {
-        let expectedRank = 1;
+    private getMissingEntries(eventEntry: EventEntry): GetMissingEntriesInfo {
         const missingEntries: MissingEntry[] = [];
-        const sortedEntries: Entry[] = eventEntry.entries.sort((entry1: Entry, entry2: Entry): number => entry1.rank - entry2.rank);
-        for (const entry of sortedEntries) {
-            if (entry.rank > expectedRank) {
-                while (expectedRank < entry.rank) {
+        const errorEntries: MissingEntry[] = [];
+        const sortedEntries: Entry[] = eventEntry.entries.sort((entry1: Entry, entry2: Entry): number => entry1.position - entry2.position);
+        let rankDifference = 1;
+        for (let i = 1; i < sortedEntries.length; i++) {
+            const entryRank: number = sortedEntries[i].position;
+            const prevEntryRank: number = sortedEntries[i - 1].position;
+            if (entryRank === prevEntryRank) {
+                rankDifference++;
+            } else if (entryRank - prevEntryRank === rankDifference) {
+                rankDifference = 1;
+            } else if (entryRank - prevEntryRank > rankDifference) {
+                for (let j = prevEntryRank + rankDifference; j < entryRank; j++) {
                     missingEntries.push({
                         eventNum: eventEntry.event.eventNum,
-                        rank: expectedRank
+                        rank: j
                     });
-                    expectedRank++;
                 }
-            } else if (entry.rank < expectedRank) {
-                throw Error("MeetValidator.GetMissingInfo: Current rank is less than the expected rank");
+            } else {
+                rankDifference = 1;
+                errorEntries.push({
+                    eventNum: eventEntry.event.eventNum,
+                    rank: entryRank
+                });
             }
-            this.logger.log(JSON.stringify(entry));
-            expectedRank++;
         }
-        return missingEntries;
+        return {
+            missingEntries,
+            errorEntries
+        };
     }
 
     public getMissingEventEntries(eventEntries: EventEntry[]): MissingEventInfo {
         const sortedEventEntries: EventEntry[] = eventEntries.sort((eventEntry1: EventEntry, eventEntry2: EventEntry): number => eventEntry1.event.eventNum - eventEntry2.event.eventNum);
         const missingEvents: number[] = [];
         const missingEntries: MissingEntry[] = [];
+        const errorEntries: MissingEntry[] = [];
         let expectedEventNum = 1;
         for (const eventEntry of sortedEventEntries) {
             if (eventEntry.event.eventNum > expectedEventNum) {
@@ -72,12 +90,15 @@ class MeetManager {
             }
             expectedEventNum++;
             this.logger.log(JSON.stringify(eventEntry.event));
-            missingEntries.push(...this.getMissingEntries(eventEntry));
+            const getMissingEntriesInfo: GetMissingEntriesInfo = this.getMissingEntries(eventEntry);
+            missingEntries.push(...getMissingEntriesInfo.missingEntries);
+            errorEntries.push(...getMissingEntriesInfo.errorEntries);
         }
 
         const result: MissingEventInfo = {
             missingEntries,
-            missingEvents
+            missingEvents,
+            errorEntries
         };
         this.logger.log(JSON.stringify(result));
         return result;
@@ -89,9 +110,10 @@ class MeetManager {
         const relayMap: TeamNameMap = {};
         const result: EventEntry[] = [];
         for (const teamInfo of this.meetInfo.teamInfo) {
-            individualMap[teamInfo.teamID] = teamInfo.individualName;
-            relayMap[teamInfo.teamID] = teamInfo.relayName;
+            individualMap[teamInfo.individualName] = teamInfo.teamID;
+            relayMap[teamInfo.relayName] = teamInfo.teamID;
         }
+        this.logger.log(JSON.stringify(relayMap));
         for (const eventEntry of eventEntries) {
             const isRelay = eventEntry.event.isRelay;
             const entries: Entry[] = [];
@@ -99,7 +121,7 @@ class MeetManager {
                 const prevName = entry.team;
                 const map = isRelay ? relayMap : individualMap;
                 const newName = map[prevName] ? map[prevName] : prevName;
-                const newEntry = {...entry};
+                const newEntry = { ...entry };
                 newEntry.team = newName;
                 entries.push(newEntry);
             }
@@ -131,7 +153,7 @@ class MeetManager {
                     points[entry.team] = 0;
                 }
                 const pointsSystem: number[] = eventEntry.event.isRelay ? relayPointsSystem : individualPointsSystem;
-                points[entry.team] += pointsSystem[entry.rank] ? pointsSystem[entry.rank] : 0;
+                points[entry.team] += pointsSystem[entry.position] ? pointsSystem[entry.position] : 0;
             }
         }
         for (const [key, value] of Object.entries(points)) {
