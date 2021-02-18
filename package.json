@@ -18,7 +18,6 @@
     "author": "Max Hao",
     "license": "MIT",
     "dependencies": {
-        "eslint-plugin-no-null": "^1.0.2",
         "express": "^4.17.1",
         "pdfjs-dist": "^2.6.347"
     },
