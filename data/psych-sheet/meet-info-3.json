@@ -1,0 +1,59 @@
+{
+    "teamInfo": [
+        {
+            "teamID": "WAT",
+            "individualName": "WAT",
+            "relayName": "Warriors"
+        },
+        {
+            "teamID": "UT",
+            "individualName": "UT",
+            "relayName": "UT"
+        },
+        {
+            "teamID": "WES",
+            "individualName": "WES",
+            "relayName": "Mustangs"
+        },
+        {
+            "teamID": "UG",
+            "individualName": "UG",
+            "relayName": "Gryphons"
+        },
+        {
+            "teamID": "MACU",
+            "individualName": "MACU",
+            "relayName": "MACU"
+        },
+        {
+            "teamID": "LU",
+            "individualName": "LU",
+            "relayName": "Voyageurs"
+        },
+        {
+            "teamID": "QUE",
+            "individualName": "QUE",
+            "relayName": "QUE"
+        },
+        {
+            "teamID": "WLU",
+            "individualName": "WLU",
+            "relayName": "WLU"
+        },
+        {
+            "teamID": "BADGR",
+            "individualName": "BADGR",
+            "relayName": "Brock Badgers"
+        },
+        {
+            "teamID": "CAR",
+            "individualName": "CAR",
+            "relayName": "Carleton"
+        },
+        {
+            "teamID": "YU",
+            "individualName": "YU",
+            "relayName": "YU"
+        }
+    ]
+}
