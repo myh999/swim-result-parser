@@ -13,40 +13,46 @@ interface MeetAnalysis {
 }
 
 export const analyzePsychSheet = async (req: Request, res: Response): Promise<void> => {
-    const pdfFile = req.file;
-    const path = pdfFile.path;
-    const meetInfo: MeetInfo = req.body.meetInfo;
+    try {
+        const pdfFile = req.file;
+        const path = pdfFile.path;
+        const meetInfo: MeetInfo = JSON.parse(req.body.meetInfo);
 
-    const parser = new PDFParser(path);
-    const manager = new MeetManager(meetInfo);
+        const parser = new PDFParser(path);
+        const manager = new MeetManager(meetInfo);
 
-    const meetData: PsychSheet = await parser.getText();
-    const missingData: MissingEventInfo = manager.getMissingEventEntries(meetData.eventEntries);
-    const processedEvents: EventEntry[] = manager.getAccurateTeamNames(meetData.eventEntries);
+        const meetData: PsychSheet = await parser.getText();
+        const missingData: MissingEventInfo = manager.getMissingEventEntries(meetData.eventEntries);
+        const processedEvents: EventEntry[] = manager.getAccurateTeamNames(meetData.eventEntries);
 
-    const genders: Gender[] = Object.values(Gender);
-    const teamPoints = {};
-    teamPoints["total"] = manager.calculateTeamPoints(processedEvents);
-    for (const gender of genders) {
-        const filteredPoints: EventEntry[] = processedEvents.filter((eventEntry: EventEntry) => { return eventEntry.event.gender === gender; });
-        teamPoints[gender] = manager.calculateTeamPoints(filteredPoints);
+        const genders: Gender[] = Object.values(Gender);
+        const teamPoints = {};
+        teamPoints["total"] = manager.calculateTeamPoints(processedEvents);
+        for (const gender of genders) {
+            const filteredPoints: EventEntry[] = processedEvents.filter((eventEntry: EventEntry) => { return eventEntry.event.gender === gender; });
+            teamPoints[gender] = manager.calculateTeamPoints(filteredPoints);
+        }
+
+        const errors: MeetErrors = {
+            missingEventInfo: missingData,
+            unmappedRelayTeams: []
+        };
+
+        const analysis: MeetAnalysis = {
+            meet: {
+                meetInfo: meetInfo,
+                eventEntries: processedEvents
+            },
+            teamPoints,
+            errors
+        };
+
+        rmSync(path);
+
+        res.send(analysis);
+    } catch (err) {
+        res.status(500);
+        console.error(err);
+        res.send(err);
     }
-
-    const errors: MeetErrors = {
-        missingEventInfo: missingData,
-        unmappedRelayTeams: []
-    };
-
-    const analysis: MeetAnalysis = {
-        meet: {
-            meetInfo: meetInfo,
-            eventEntries: processedEvents
-        },
-        teamPoints,
-        errors
-    };
-
-    rmSync(path);
-
-    res.send(analysis);
 };

@@ -1,0 +1,11 @@
+UT: UT
+WES: Mustangs
+MACU: MACU
+WAT: Warriors
+UG: Gryphons
+LU: Voyageurs
+QUE: QUE
+WLU: WLU
+BADGR: Brock Badgers
+CAR: Carleton
+YU: YU

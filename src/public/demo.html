@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Swim Result Parser Demo</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+</style>
+<script src="js/demo.js"></script>
+
+<body>
+    <div class="container">
+        <form onsubmit="return false">
+            <div class="form-group">
+                <label for="pdfInput">Upload Psych Sheet</label>
+                <input id="pdfInput" class="form-control-file" type="file" accept=".pdf" />
+            </div>
+            <div class="form-group">
+                <label for="relayMappings">Relay Team Mappings</label>
+                <textarea id="relayMappings" class="form-control" type="text">
+                </textarea>
+                <small>individualName: relayName</small>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="submitPsychSheet()">Submit</button>
+        </form>
+    </div>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>Output</h4>
+                <div id="output">
+
+                </div>
+            </div>
+            <div class="col">
+                <h4>Entries</h4>
+                <div id="entries">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
