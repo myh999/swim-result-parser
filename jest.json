@@ -15,7 +15,8 @@
         "js"
     ],
     "collectCoverageFrom": [
-        "src/*.ts"
+        "src/**/*.ts",
+        "!src/server.ts"
     ],
     "testEnvironment": "node"
 }
