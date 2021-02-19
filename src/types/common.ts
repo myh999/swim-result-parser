@@ -70,3 +70,8 @@ export interface MeetInfo {
     };
     teamInfo: TeamMeetInfo[];
 }
+
+export interface Meet {
+    meetInfo: MeetInfo;
+    eventEntries: EventEntry[];
+}

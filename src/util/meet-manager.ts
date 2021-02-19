@@ -17,6 +17,11 @@ export interface MissingEventInfo {
     errorEntries: MissingEntry[];
 }
 
+export interface MeetErrors {
+    missingEventInfo: MissingEventInfo,
+    unmappedRelayTeams: string[]
+}
+
 interface GetMissingEntriesInfo {
     missingEntries: MissingEntry[];
     errorEntries: MissingEntry[];
@@ -36,7 +41,9 @@ class MeetManager {
     private logger: Logger;
 
     constructor(meetInfo: MeetInfo) {
-        this.meetInfo = meetInfo;
+        this.meetInfo = meetInfo ? meetInfo : {
+            teamInfo: []
+        };
         this.logger = new Logger(LOG_NAME);
     }
 

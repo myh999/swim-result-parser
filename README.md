@@ -29,7 +29,6 @@ $ npm run tslint
 ```
 
 TODO
-* Make it into an API endpoint
 * Add a frontend, or at least a demo page
 * Improve validation for PDF parser test (ex. compare against known # of teams)
 * Optimize some inefficient algos
