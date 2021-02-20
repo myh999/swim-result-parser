@@ -16,7 +16,7 @@ export const analyzePsychSheet = async (req: Request, res: Response): Promise<vo
     try {
         const pdfFile = req.file;
         const path = pdfFile.path;
-        const meetInfo: MeetInfo = JSON.parse(req.body.meetInfo);
+        const meetInfo: MeetInfo = req.body.meetInfo ? JSON.parse(req.body.meetInfo) : undefined;
 
         const parser = new PDFParser(path);
         const manager = new MeetManager(meetInfo);
