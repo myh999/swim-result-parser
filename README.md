@@ -3,7 +3,7 @@
 [![travis](https://travis-ci.org/myh999/swim-result-parser.svg?branch=main)](https://travis-ci.org/myh999/swim-result-parser?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/myh999/swim-result-parser/badge.svg?branch=main)](https://coveralls.io/github/myh999/swim-result-parser?branch=main)
 
-This is a continuation of the [Psych Sheet Ranker](https://github.com/myh999/psych-sheet-ranker/), which is a tool that parses psych sheets and uses the rankings to calculate the points the teams would have gained if the rankings remained the same after the swim meet. This iteration now parses the psych sheet into a JSON format, gives more potential for analysis.
+This is a continuation of the [Psych Sheet Ranker](https://github.com/myh999/psych-sheet-ranker/), which is a tool that parses psych sheets and uses the rankings to calculate the points the teams would have gained if the rankings remained the same after the swim meet. This iteration now parses the psych sheet into a JSON format, which gives more potential for different types of analysis.
 
 ![Example Psych Sheet](images/psych-sheet-example.jpg)
 Example of a psych sheet
