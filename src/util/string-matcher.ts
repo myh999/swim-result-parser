@@ -1,15 +1,22 @@
 import { Name, Time, Event, Gender, Stroke, AlternateTime } from "../types/common";
 
-const NAME_DECORATORS = /^\*/;
-const TIME_PATTERN = /^([0-5]?[0-9]:)?[0-5][0-9]\.[0-9][0-9]$/;
-const TIME_DECORATORS = /^X/;
-const TEAM_PATTERN = /^[A-Za-z]{2,}([A-Za-z]|\s)*$/; // Team has to start with 2 characters
+const NAME_DECORATORS = /^\*/g;
+const NAME_PATTERN = /^([a-zA-Z .'-]+_?[SsBbMm0-9]*)(, *[a-zA-Z .'-]*)?$/g; // This should cover most names and PARA names
+const TIME_PATTERN = /^([0-5]?[0-9]:)?[0-5][0-9]\.[0-9][0-9]$/g;
+const TIME_DECORATORS = /(^X)|(^J)/g;
+const TEAM_PATTERN = /^[A-Za-z]{2,}([A-Za-z]|\s)*$/g; // Team has to start with 2 characters
+const RELAY_PATTERN = /(^'[A-Z]'$)|(^[A-Z]$)/g;
+const RELAY_DECORATORS = /'/g;
+const POSITION_PATTERN = /^[0-9]+$/g;
 
 class StringMatcher {
 
     public getLastFirstName(input: string): Name {
-        const splitNames = input.trim().replace(new RegExp(NAME_DECORATORS), "").split(",");
-        if (!splitNames || splitNames.length !== 2) return undefined;
+        const inputName = input.trim().replace(new RegExp(NAME_DECORATORS), "");
+        if (inputName.search(new RegExp(NAME_PATTERN)) === -1) return undefined;
+        const splitNames = inputName.split(",");
+        if (!splitNames || splitNames.length === 0 || splitNames.length > 2) return undefined;
+        if (splitNames.length === 1) splitNames[1] = "";
 
         const lastName = splitNames[0].trim();
         const firstName = splitNames[1].trim();
@@ -26,12 +33,19 @@ class StringMatcher {
         return trimmed;
     }
 
-    public getTime(input: string): Time {
+    public getTime(input: string): Time | AlternateTime {
         // remove decorators (ex. X for Exhibition)
         const trimmed = input.trim().replace(new RegExp(TIME_DECORATORS), "");
 
+        // Use alternate time as a fallback if no numeric time is found
+        const alternateTimes: AlternateTime[] = Object.values(AlternateTime);
+        let alternateTime: AlternateTime;
+        for (const compare of alternateTimes) {
+            if (compare === trimmed) alternateTime = compare;
+        }
+
         const matched = trimmed.search(new RegExp(TIME_PATTERN));
-        if (matched === -1) return undefined;
+        if (matched === -1) return alternateTime;
         const result: Time = {
             min: 0,
             sec: 0,
@@ -47,21 +61,12 @@ class StringMatcher {
         }
         currentSplit = currentString.split(".");
         if (currentSplit.length !== 2) {
-            return undefined;
+            return alternateTime;
         }
         result.sec = parseInt(currentSplit[0]);
         result.frac = parseInt(currentSplit[1]);
 
         return result;
-    }
-
-    public getAlternateTime(input: string): AlternateTime {
-        const trimmed = input.trim().replace(TIME_DECORATORS, "");
-        const alternateTimes: AlternateTime[] = Object.values(AlternateTime);
-        for (const compare of alternateTimes) {
-            if (compare === trimmed) return compare;
-        }
-        return undefined;
     }
 
     // NOTE: This will not work with age group formats
@@ -121,6 +126,19 @@ class StringMatcher {
             result.isRelay = false;
         }
         return result;
+    }
+
+    public getRelay(input: string): string {
+        if (input.trim().search(new RegExp(RELAY_PATTERN)) === -1) return undefined;
+        
+        return input.trim().replace(RELAY_DECORATORS, "");
+    }
+
+    public getPosition(input: string): number {
+        if (input.trim().search(new RegExp(POSITION_PATTERN)) === -1) return undefined;
+        const number = parseInt(input.trim());
+        if (isNaN(number)) return undefined;
+        return number;
     }
 }
 

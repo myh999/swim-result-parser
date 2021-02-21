@@ -3,7 +3,7 @@ import PDFParser from "../../src/util/pdf-parser";
 import Logger from "../../src/util/logger";
 import { readFileSync } from "fs";
 
-describe("pdf-converter", () => {
+describe("pdf-parser", () => {
     const LOG_PATH = "pdf-parser-test";
     let logger: Logger;
 

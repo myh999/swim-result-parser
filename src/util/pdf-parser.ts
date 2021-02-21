@@ -5,13 +5,11 @@ import {
     TextContent,
     TextItem,
 } from "pdfjs-dist/types/display/api";
-import { Entry, EventEntry, PsychSheet, Event, Time, Name, AlternateTime } from "../types/common";
-import Logger from "./logger";
-import StringMatcher from "./string-matcher";
+import { EventEntry, PsychSheet } from "../types/common";
+import Parser, { Field } from "./parser";
 
 const COL_ERR = 10;
 const ROW_ERR = 5;
-const LOG_PATH = "pdf-parser";
 
 interface TextInfo {
     text: string;
@@ -27,17 +25,20 @@ interface PageInfo {
     text: TextInfo[];
 }
 
-class PDFParser {
+class PDFParser extends Parser {
     path: string;
-    matcher: StringMatcher;
     columns: number[];
-    logger: Logger;
 
     constructor(path: string) {
+        const individualFields: Field[] = [
+            Field.POSITION, Field.NAME, Field.TEAM, Field.SEED_TIME
+        ];
+        const relayFields = [
+            Field.POSITION, Field.TEAM, Field.RELAY, Field.SEED_TIME
+        ];
+        super(individualFields, relayFields);
         this.path = path;
-        this.matcher = new StringMatcher();
         this.columns = [];
-        this.logger = new Logger(LOG_PATH);
     }
 
     private async getTextFromPage(doc: PDFDocumentProxy, pageNum: number): Promise<PageInfo> {
@@ -57,93 +58,7 @@ class PDFParser {
         };
     }
 
-    private getEntry(row: TextInfo[], currentEvent: Event): Entry {
-        row = row.sort((text1: TextInfo, text2: TextInfo) => text1.xPos - text2.xPos);
-
-        const log = row.map((info) => ({ text: info.text, xPos: info.xPos }));
-        this.logger.log(JSON.stringify(log));
-
-        if (currentEvent.isRelay === false) {
-            // Individual: Rank, Name, Year, School, Seed Time
-            let index = 0;
-            let rank: number;
-            let name: Name;
-            let team: string;
-            let seedTime: Time | AlternateTime;
-            while (index < row.length && !rank) {
-                rank = parseInt(row[index].text);
-                index++;
-            }
-            if (!rank) return undefined;
-
-            while (index < row.length && !name) {
-                name = this.matcher.getLastFirstName(row[index].text);
-                index++;
-            }
-            if (!name) return undefined;
-
-            while (index < row.length && !team) {
-                team = this.matcher.getTeam(row[index].text);
-                index++;
-            }
-            if (!team) return undefined;
-
-            while (index < row.length && !seedTime) {
-                seedTime = this.matcher.getTime(row[index].text) || this.matcher.getAlternateTime(row[index].text);
-                index++;
-            }
-            if (!seedTime) return undefined;
-
-            return {
-                position: rank,
-                name,
-                team,
-                seedTime
-            };
-        } else {
-            // Relay: Rank, Team, Relay, Seed Time
-            let index = 0;
-            let rank: number;
-            let team: string;
-            let relay: string;
-            let seedTime: Time | AlternateTime;
-
-            while (index < row.length && !rank) {
-                rank = parseInt(row[index].text);
-                index++;
-            }
-            if (!rank) return undefined;
-
-            while (index < row.length && !team) {
-                team = this.matcher.getTeam(row[index].text);
-                index++;
-            }
-            if (!team) return undefined;
-
-            while (index < row.length && !relay) {
-                const tmp: string[] = row[index].text.match(new RegExp("[A-Z]"));
-                relay = tmp && tmp.length > 0 ? tmp[0] : undefined;
-                index++;
-            }
-            if (!relay) return undefined;
-
-            while (index < row.length && !seedTime) {
-                seedTime = this.matcher.getTime(row[index].text) || this.matcher.getAlternateTime(row[index].text);
-                index++;
-            }
-            if (!seedTime) return undefined;
-
-            return {
-                position: rank,
-                team,
-                relay,
-                seedTime
-            };
-        }
-    }
-
     private parsePage(page: PageInfo): EventEntry[] {
-        const eventEntries: EventEntry[] = [];
 
         const groupedLines: TextInfo[][] = []; // Lines grouped per column
         this.columns.forEach((colPos: number, index: number) => {
@@ -152,8 +67,8 @@ class PDFParser {
             const group: TextInfo[] = page.text.filter((textInfo: TextInfo): boolean => textInfo.xPos >= startPos && textInfo.xPos <= endPos - COL_ERR);
             groupedLines.push(group);
         });
-        let currentEvent: Event;
-        let currentEntries: Entry[] = [];
+
+        const rows: string[][] = [];
         for (const lineGroup of groupedLines) {
             // Sort lines from top to bottom
             const sortedGroup: TextInfo[] = lineGroup.sort((line1: TextInfo, line2: TextInfo): number =>
@@ -171,37 +86,14 @@ class PDFParser {
                     index++;
                 }
 
-                const event: Event = this.matcher.getEvent(currentRow[0].text);
-                if (event) {
-                    // We have a new event
-                    this.logger.log(JSON.stringify(event));
-                    if (currentEvent && currentEntries.length !== 0) {
-                        eventEntries.push({
-                            event: currentEvent,
-                            entries: currentEntries
-                        });
-                    }
+                const sortedRow = currentRow.sort((text1: TextInfo, text2: TextInfo) => text1.xPos - text2.xPos);
+                const rowText = sortedRow.map((textInfo: TextInfo) => { return textInfo.text; });
 
-                    currentEvent = event;
-                    currentEntries = [];
-                } else if (currentEvent) {
-                    const entry: Entry = this.getEntry(currentRow, currentEvent);
-                    if (entry) {
-                        currentEntries.push(entry);
-                    }
-                }
+                rows.push(rowText);
             }
         }
 
-        // Push the remaining entries
-        if (currentEvent && currentEntries.length !== 0) {
-            eventEntries.push({
-                event: currentEvent,
-                entries: currentEntries
-            });
-        }
-
-        return eventEntries;
+        return this.parseLines(rows);
     }
 
     public async getText(): Promise<PsychSheet> {

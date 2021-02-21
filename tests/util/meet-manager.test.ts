@@ -4,7 +4,7 @@ import { MeetInfo, PsychSheet, TeamPoints } from "../../src/types/common";
 import Logger from "../../src/util/logger";
 import MeetManager from "../../src/util/meet-manager";
 
-describe("meet manager tests", () => {
+describe("meet-manager", () => {
 
     const MEET_MANAGER_TEST_LOG_NAME = "meet-manager-test";
     let manager: MeetManager;

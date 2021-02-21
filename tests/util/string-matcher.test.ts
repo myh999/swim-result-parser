@@ -40,7 +40,7 @@ describe("string-matcher", () => {
         expect(matcher.getTime(input1)).toEqual(output1);
         expect(matcher.getTime(input2)).toEqual(output2);
         expect(matcher.getTime(input3)).toEqual(output3);
-        expect(matcher.getAlternateTime(input4)).toEqual(output4);
+        expect(matcher.getTime(input4)).toEqual(output4);
         expect(matcher.getTime(input5)).toEqual(output5);
     });
 
@@ -57,9 +57,9 @@ describe("string-matcher", () => {
             firstName: "Devon",
         };
 
-        const input3 = "McCuaig S9sb9sm9, Cameron";
+        const input3 = "McCuaig_S9sb9sm9, Cameron";
         const output3: Name = {
-            lastName: "McCuaig S9sb9sm9",
+            lastName: "McCuaig_S9sb9sm9",
             firstName: "Cameron"
         };
 
@@ -69,14 +69,28 @@ describe("string-matcher", () => {
             firstName: "Jyasi"
         };
 
-        const input5 = "X1:07.45";
-        const output5 = undefined;
+        const input5 = "Tchervenelekov,";
+        const output5: Name = {
+            lastName: "Tchervenelekov",
+            firstName: ""
+        };
+
+        const input6 = "Beaumont Stidwi";
+        const output6: Name = {
+            lastName: "Beaumont Stidwi",
+            firstName: ""
+        };
+
+        const input7 = "X1:07.45";
+        const output7 = undefined;
 
         expect(matcher.getLastFirstName(input1)).toEqual(output1);
         expect(matcher.getLastFirstName(input2)).toEqual(output2);
         expect(matcher.getLastFirstName(input3)).toEqual(output3);
         expect(matcher.getLastFirstName(input4)).toEqual(output4);
         expect(matcher.getLastFirstName(input5)).toEqual(output5);
+        expect(matcher.getLastFirstName(input6)).toEqual(output6);
+        expect(matcher.getLastFirstName(input7)).toEqual(output7);
     });
 
     test("parses a valid team", () => {
@@ -134,5 +148,35 @@ describe("string-matcher", () => {
         expect(matcher.getEvent(input3)).toEqual(output3);
         expect(matcher.getEvent(input4)).toEqual(output4);
         expect(matcher.getEvent(input5)).toEqual(output5);
+    });
+
+    test("parses a valid position", () => {
+        const input1 = "1";
+        const output1 = 1;
+
+        const input2 = "   18   ";
+        const output2 = 18;
+
+        const input3 = "asdfsadf";
+        const output3 = undefined;
+
+        expect(matcher.getPosition(input1)).toEqual(output1);
+        expect(matcher.getPosition(input2)).toEqual(output2);
+        expect(matcher.getPosition(input3)).toEqual(output3);
+    });
+
+    test("parses a valid relay", () => {
+        const input1 = "A";
+        const output1 = "A";
+
+        const input2 = "'A'";
+        const output2 = "A";
+
+        const input3 = "Warriors";
+        const output3 = undefined;
+
+        expect(matcher.getRelay(input1)).toEqual(output1);
+        expect(matcher.getRelay(input2)).toEqual(output2);
+        expect(matcher.getRelay(input3)).toEqual(output3);
     });
 });
