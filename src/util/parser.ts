@@ -1,5 +1,8 @@
 import { Entry, EventEntry, Event, Name, Time } from "../types/common";
+import Logger from "./logger";
 import StringMatcher from "./string-matcher";
+
+const LOG_NAME = "parser";
 
 export enum Field {
     POSITION = "position",
@@ -14,12 +17,14 @@ export enum Field {
 class Parser {
     private individualFields: Field[];
     private relayFields: Field[];
+    private logger: Logger;
     protected matcher: StringMatcher;
 
     constructor(individualFields: Field[], relayFields: Field[]) {
         this.individualFields = individualFields;
         this.relayFields = relayFields;
         this.matcher = new StringMatcher();
+        this.logger = new Logger(LOG_NAME);
     }
 
     private parseEntry(line: string[], currentEvent: Event): Entry {
@@ -68,6 +73,7 @@ class Parser {
         let currentEntries: Entry[] = [];
 
         for (const line of lines) {
+            this.logger.log(JSON.stringify(line));
             const event: Event = this.matcher.getEvent(line[0]);
             if (event) {
                 // We have a new event

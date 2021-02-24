@@ -8,9 +8,10 @@
         "watch": "tsc -p ./tsconfig.json -w",
         "test": "jest -i --no-cache --config ./jest.json",
         "lint": "eslint ./src ./tests ./analysis --ext .ts",
-        "clearlog": "rimraf -r ./log/*",
-        "psychsheet": "jest -t 'full-psych-sheet-analysis' --no-cache --config ./jest-analysis.json",
-        "clearanalysis": "rimraf -r ./analysis/*output*",
+        "clear-logs": "rimraf -r ./log/*",
+        "psych-sheet": "jest -t 'full-psych-sheet-analysis' --no-cache --config ./jest-analysis.json",
+        "live-results": "jest -t 'full-live-results-analysis' --no-cache --config ./jest-analysis.json",
+        "clear-analysis": "rimraf -r ./analysis/*output*",
         "serve": "node dist/server.js",
         "start": "num run serve",
         "copy-static-assets": "ts-node copy-static-assets.ts"

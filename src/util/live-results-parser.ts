@@ -69,6 +69,28 @@ class LiveResultsParser extends Parser {
         return results.filter((eventEntry: EventEntry): boolean => { return eventEntry !== undefined; });
     }
 
+    public async parseBaseUrl(baseUrl: string, events: number[], isFinal: boolean = false): Promise<EventEntry[]> {
+        const rawEvtIndex = await fetch(`${baseUrl}evtindex.htm`);
+        const textEvtIndex = await rawEvtIndex.text();
+        
+        const pattern = isFinal ? /href="[0-9]+F[0-9]+.htm"/g : /href="[0-9]+P[0-9]+.htm"/g;
+        const links = textEvtIndex.match(pattern);
+        const eventUrls: string[] = [];
+
+        const evtPrefix = isFinal ? "F" : "P";
+        for (let link of links) {
+            link = link.replace(/(href=)|"/g, "");
+            const split = link.split(evtPrefix);
+            if (split.length !== 2) continue;
+            const evtNum = parseInt(split[1]);
+            if (!isNaN(evtNum) && events.includes(evtNum)) {
+                eventUrls.push(`${baseUrl}${link}`);
+            }
+        }
+
+        return this.parseUrls(eventUrls);
+    }
+
 }
 
 export default LiveResultsParser;

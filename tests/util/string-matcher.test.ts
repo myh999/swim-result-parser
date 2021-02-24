@@ -81,8 +81,14 @@ describe("string-matcher", () => {
             firstName: ""
         };
 
-        const input7 = "X1:07.45";
-        const output7 = undefined;
+        const input7 = "Chaubet, Gaël";
+        const output7: Name = {
+            lastName: "Chaubet",
+            firstName: "Gaël"
+        };
+
+        const input8 = "X1:07.45";
+        const output8 = undefined;
 
         expect(matcher.getLastFirstName(input1)).toEqual(output1);
         expect(matcher.getLastFirstName(input2)).toEqual(output2);
@@ -91,6 +97,7 @@ describe("string-matcher", () => {
         expect(matcher.getLastFirstName(input5)).toEqual(output5);
         expect(matcher.getLastFirstName(input6)).toEqual(output6);
         expect(matcher.getLastFirstName(input7)).toEqual(output7);
+        expect(matcher.getLastFirstName(input8)).toEqual(output8);
     });
 
     test("parses a valid team", () => {

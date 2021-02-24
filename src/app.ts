@@ -12,7 +12,8 @@ app.use(
     express.static(resolve(__dirname, "./public"), { maxAge: 31557600000 })
 );
 
-app.post("/analysis/psychsheet", upload.single("psychsheet"), meetAnalysisController.analyzePsychSheet);
+app.post("/analysis/psych-sheet", upload.single("psychsheet"), meetAnalysisController.analyzePsychSheet);
+app.post("/analysis/live-results", upload.none(), meetAnalysisController.analyzeLiveResults);
 app.get("/demo", demoController.getDemo);
 
 export default app;

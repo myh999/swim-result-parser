@@ -1,7 +1,7 @@
-import { Name, Time, Event, Gender, Stroke, AlternateTime } from "../types/common";
+import { Name, Time, Event, Gender, Stroke, AlternateTime } from "../types/common"; 
 
 const NAME_DECORATORS = /^\*/g;
-const NAME_PATTERN = /^([a-zA-Z .'-]+_?[SsBbMm0-9]*)(, *[a-zA-Z .'-]*)?$/g; // This should cover most names and PARA names
+const NAME_PATTERN = /^([\u00c0-\u01ff\ufffda-zA-Z .'-]+_?[SsBbMm0-9]*)(, *[\u00c0-\u01ff\ufffda-zA-Z .'-]*)?$/g; // This should cover most names and PARA names
 const TIME_PATTERN = /^([0-5]?[0-9]:)?[0-5][0-9]\.[0-9][0-9]$/g;
 const TIME_DECORATORS = /(^X)|(^J)/g;
 const TEAM_PATTERN = /^[A-Za-z]{2,}([A-Za-z]|\s)*$/g; // Team has to start with 2 characters

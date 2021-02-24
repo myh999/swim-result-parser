@@ -30,7 +30,7 @@ function submitPsychSheet() {
     formData.append("meetInfo", JSON.stringify(meetInfo));
     formData.append("psychsheet", pdfInput.files[0]);
 
-    fetch("http://localhost:3000/analysis/psychsheet", {
+    fetch("http://localhost:3000/analysis/psych-sheet", {
         method: "POST",
         body: formData
     })
