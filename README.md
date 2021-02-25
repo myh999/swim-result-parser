@@ -25,7 +25,7 @@ npm run build
 npm run serve
 ```
 
-A demo should then be available on http://localhost:3000/demo for tesing
+A demo should then be available on http://localhost:3000/demo for testing
 
 ## Project Structure
 
