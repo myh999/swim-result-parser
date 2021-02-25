@@ -14,6 +14,7 @@ app.use(
 
 app.post("/analysis/psych-sheet", upload.single("psychsheet"), meetAnalysisController.analyzePsychSheet);
 app.post("/analysis/live-results", upload.none(), meetAnalysisController.analyzeLiveResults);
+app.get("/demo/psych-sheet", demoController.getPsychSheetDemo);
 app.get("/demo", demoController.getDemo);
 
 export default app;

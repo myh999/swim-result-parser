@@ -24,15 +24,23 @@ describe("app", () => {
 
     test("returns 200 on psych-sheet", (done) => {
         const pdfPath = resolve(__dirname, "../data/psych-sheet/psych-sheet-0.pdf");
-        request(app).post("/analysis/psych-sheet").attach("psychsheet", pdfPath).expect(200, done);
+        request(app).post("/analysis/psych-sheet/").attach("psychsheet", pdfPath).expect(200, done);
     });
 
     test("returns 200 on live-results", (done) => {
         const baseUrl = "http://results.rectec.ca/oua20/";
         const events = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-        request(app).post("/analysis/live-results")
+        request(app).post("/analysis/live-results/")
             .field("baseUrl", baseUrl)
             .field("events", events)
             .expect(200, done);
+    });
+
+    test("returns 200 on demo", (done) => {
+        request(app).get("/demo/").expect(200, done);
+    });
+
+    test("returns 200 on demo/psych-sheet", (done) => {
+        request(app).get("/demo/psych-sheet/").expect(200, done);
     });
 });
