@@ -5,6 +5,8 @@
 
 This is a continuation of the [Psych Sheet Ranker](https://github.com/myh999/psych-sheet-ranker/), which is a tool that parses psych sheets and uses the rankings to calculate the points the teams would have gained if the rankings remained the same after the swim meet. This iteration now parses the psych sheet into a JSON format, which gives more potential for different types of analysis.
 
+It can also parse meets from live result websites that are provided in some championship swim meets (ex. results.rectec.ca/oua20/).
+
 ![Example Psych Sheet](images/psych-sheet-example.jpg)
 Example of a psych sheet
 
@@ -56,11 +58,17 @@ To lint:
 $ npm run lint
 ```
 
+## Dependencies
+| Package | Description |
+|-----------|-----------|
+| express | Node.js web framework |
+| multer | Parses multipart form data for PDF uploads |
+| [pdfjs-dist](https://mozilla.github.io/pdf.js/) | Gets text data for PDFs |
+
 ## Limitations
 This parser is optimized for OUA Varsity swim meet psych sheets using the HyTek software to generate psych sheets. Other psych sheets might work, since many of them follow a similar format, but accuracy is not guaranteed. Most notably, age group meets will not work with this parser.
 
 ## TODO
-* Expand this into other formats, most notably live results (see http://results.rectec.ca/oua20/)
-* Improve demo page
+* Improve demo page and add demo for live results
 * Improve validation for PDF parser test (ex. compare against known # of teams)
 * Optimize some inefficient algos
